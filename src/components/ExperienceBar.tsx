@@ -1,14 +1,14 @@
+import * as S from '../styles/experienceBar';
+
 export function ExperienceBar() {
   return (
-    <header className="experice-bar">
-      <span>0 xp</span>
-      <div>
-        <div style={{ width: '50%' }} />
-        <span className="current-experience" style={{ left: '50%' }}>
-          300px
-        </span>
-      </div>
-      <span>600 xp</span>
-    </header>
+    <S.ExperienceBar>
+      <S.ExperienceBarSpan>0 xp</S.ExperienceBarSpan>
+      <S.ExperienceBarDiv>
+        <S.ExperienceBarDivIntern style={{ width: '50%' }} />
+        <S.CurrentExperience style={{ left: '50%' }}>300px</S.CurrentExperience>
+      </S.ExperienceBarDiv>
+      <S.ExperienceBarSpan>600 xp</S.ExperienceBarSpan>
+    </S.ExperienceBar>
   );
 }
