@@ -1,14 +1,91 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Moveit
+
+<p align="center"><img src="https://raw.githubusercontent.com/guilhermecapitao/nlw04-moveit-web/206d2e078394ca207037c0a86a976a0c8a5e6257/.github/moveit.svg"/></p>
+<h4 align="center">NextLevelWeek 4.0 🚀</h4>
+<h4 align="center">Application made during a NLW, made with love by @Rocketseat 💜</h4>
+
+<p align="center">
+  <a href="#project">Project</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#techs">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#install">Install</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;
+  <a href="#author">Author</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</p>
+
+<h1 align="center">
+  <a href="https://www.linkedin.com/in/joaopealves/">
+    <img alt="Linkedin" src="https://img.shields.io/badge/LinkedIn-1781EB?style=for-the-badge&logo=linkedin&logoColor=fff&labelColor=1781EB)%5D">
+  </a>
+  <a href="./LICENSE">
+    <img alt="GitHub license" src="https://img.shields.io/badge/License%20MIT-5eb85e?style=for-the-badge&logo=&logoColor=2ee62e&labelColor=1781EB)%5D">
+  </a>
+</h1>
+
+<br>
+
+<p align="center" id="project">
+  Moveit is a project developed during the next level week, promoted by Rocketseat, the aim of the project is to put Pomodoro's theory into practice. 
+  </p>
+<p align="center" id="project">
+  The Pomodoro concept is that the person who is going to study or perform a task takes exactly 25 minutes. 
+  </p>
+<p align="center" id="project">
+  Completing it or not, he should stop and rest for 5 minutes.
+  With that the application has a counter that every 25 minutes it releases a challenge to do, and it is gathering points
+</p>
+
+<br>
+
+<h2 id="techs">
+  🚀 Technologies
+</h2>
+
+This project uses to work:
+
+- [Next.js](https://nextjs.org)
+- [React](https://reactjs.org)
+- [TypeScript](https://www.typescriptlang.org)
+- [Node.js](https://nodejs.org/en/docs/)
+
+<br>
+<h2 id="install">
+  🎓 Install Guid
+</h2>
+<br>
+
+## Installing Node.js
+
+<br>
+<h2> Node.js 🟩</h2>
+
+you will only need the node
+
+</br>
+You can install from here:
+
+https://nodejs.org/en/download/
+
+</br>
 
 ## Getting Started
 
-First, run the development server:
+    --Open terminal--
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+    #Clone repo from github
+    git clone https://github.com/joaopealves/moveit.git
+
+    #Entry in Rocketpay folder
+    cd moveit
+
+    #Install deps
+    yarn
+    # org
+    npm install
+
+    #Run the development server:
+
+    npm run dev
+    # or
+    yarn dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
@@ -27,8 +104,19 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+</br>
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+<center>
+<a href="https://github.com/joaopealves/">
+  <img src="https://avatars.githubusercontent.com/u/56173070?s=400&u=8d90ad25957fec36b6d0726f2ed95c713de42103&v=4" width="100px;" alt="My photo"/>
+  <br />
+  <sub><b>João Pedro Alves</b></sub>
+</a>
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+<br />
+<br />
+
+<a href="https://www.linkedin.com/in/joaopealves/">
+  <img alt="Linkedin" src="https://img.shields.io/badge/Linkedin-1781EB?style=for-the-badge&logo=linkedin&logoColor=fff&labelColor=1781EB)%5D">
+</a>
+</center>
