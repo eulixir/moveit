@@ -1,14 +1,16 @@
-import * as S from '../styles/experienceBar';
+import styles from '../styles/components/ExperienceBar.module.css';
 
 export function ExperienceBar() {
   return (
-    <S.ExperienceBar>
-      <S.ExperienceBarSpan>0 xp</S.ExperienceBarSpan>
-      <S.ExperienceBarDiv>
-        <S.ExperienceBarDivIntern style={{ width: '50%' }} />
-        <S.CurrentExperience style={{ left: '50%' }}>300px</S.CurrentExperience>
-      </S.ExperienceBarDiv>
-      <S.ExperienceBarSpan>600 xp</S.ExperienceBarSpan>
-    </S.ExperienceBar>
+    <header className={styles.experienceBar}>
+      <span>0 xp</span>
+      <div>
+        <div className={styles.experienceBar} style={{ width: '50%' }} />
+        <span className={styles.currentExperience} style={{ left: '50%' }}>
+          300px
+        </span>
+      </div>
+      <span>600 xp</span>
+    </header>
   );
 }

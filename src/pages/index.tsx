@@ -1,15 +1,26 @@
+import { CompletedChallenges } from '../components/CompletedChallenge';
+import { Countdown } from '../components/Countdown';
 import { ExperienceBar } from '../components/ExperienceBar';
-import * as S from '../styles/global';
-import { ThemeProvider, DefaultTheme } from 'styled-components';
-import GlobalStyle from '../styles/global';
+import { Profile } from '../components/Profile';
+import styles from '../styles/pages/Home.module.css';
+
+import Head from 'next/head';
 
 function App() {
   return (
-    <div>
-      <GlobalStyle />
-      <S.Container>
-        <ExperienceBar />
-      </S.Container>
+    <div className={styles.container}>
+      <Head>
+        <title>Início | move.it</title>
+      </Head>
+      <ExperienceBar />
+      <section className={styles.section}>
+        <div>
+          <Profile />
+          <CompletedChallenges />
+          <Countdown />
+        </div>
+        <div></div>
+      </section>
     </div>
   );
 }
