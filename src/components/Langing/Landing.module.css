@@ -1,0 +1,61 @@
+.Container {
+  height: 100vh;
+  max-width: 100vw;
+  margin: 0 auto;
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  background: var(--blue);
+}
+
+.Container section {
+  height: 100vh;
+  color: white;
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6.25rem;
+  align-content: center;
+}
+
+.contentLoginContainer {
+  width: 35rem;
+  height: 25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.loginContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loginContainer input {
+  width: 340px;
+  height: 80px;
+  outline: none;
+  border: none;
+  padding: 32px;
+  color: var(--grey);
+  background: linear-gradient(90deg, #4953b8 0%, rgba(73, 83, 184, 0.2) 100%);
+  border-radius: 5px 0px 0px 5px;
+}
+.loginContainer input::placeholder {
+  color: var(--grey);
+}
+
+.loginContainer button {
+  height: 80px;
+  width: 80px;
+  background: #4953b8;
+  border-radius: 0px 5px 5px 0px;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+}
+.loginContainer button:focus {
+  background: var(--green);
+}
