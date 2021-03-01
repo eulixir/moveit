@@ -6,10 +6,14 @@ export function Landing() {
       <section>
         <div className={styles.logoContainer}></div>
         <div className={styles.contentLoginContainer}>
-          <strong>move.it</strong>
-          <p>Bem vindo</p>
-          <div>
-            <img></img>
+          <div className={styles.logoContainer}>
+            <img src="/icons/logo.svg" alt="" />
+          </div>
+          <div className={styles.welcomeContainer}>
+            <strong>Bem-vindo</strong>
+          </div>
+          <div className={styles.githubContainer}>
+            <img src="/icons/github.svg"></img>
             Faça login com seu github para começar
           </div>
           <div className={styles.loginContainer}>
