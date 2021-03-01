@@ -15,6 +15,7 @@
   background: var(--white);
   width: 100%;
   max-width: 400px;
+  height: 400px;
   padding: 2rem 3rem;
   border-radius: 5px;
   box-shadow: 0 0 60px rga(0, 0, 0, 0.05);
@@ -40,12 +41,41 @@
   color: var(--tetx);
   margin-top: 0.25rem;
 }
-
-.container button {
+.closeButton {
   position: absolute;
   right: 0.5rem;
   top: 0.5rem;
   background: transparent;
   border: 0;
   font-size: 0;
+}
+.container footer {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  width: 100%;
+  left: 0;
+  height: 80px;
+  background: #f5fcff;
+}
+
+.container footer button {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border: none;
+  border-top: 1px solid #dcdde0;
+  color: #2aa9e0;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.5s;
+}
+
+.container footer button:hover {
+  background: #ddf2fc;
+}
+.container footer button img {
+  margin-left: 17px;
 }
