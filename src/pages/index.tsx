@@ -1,8 +1,8 @@
-import { CompletedChallenges } from '../components/CompletedChallenge';
-import { ExperienceBar } from '../components/ExperienceBar';
-import { ChallengeBox } from '../components/ChallengeBox';
-import { Countdown } from '../components/Countdown';
-import { Profile } from '../components/Profile';
+import { CompletedChallenges } from '../components/CompletedChallenge/CompletedChallenge';
+import { ExperienceBar } from '../components/ExperienceBar/ExperienceBar';
+import { ChallengeBox } from '../components/ChallengeBox/ChallengeBox';
+import { Countdown } from '../components/Countdown/Countdown';
+import { Profile } from '../components/Profile/Profile';
 import { GetServerSideProps } from 'next';
 
 import styles from '../styles/pages/Home.module.css';
