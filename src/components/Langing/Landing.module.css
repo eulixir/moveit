@@ -14,7 +14,6 @@
   flex: 1;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 6.25rem;
   align-content: center;
 }
 .logoContainer {
@@ -30,14 +29,14 @@
 .contentLoginContainer {
   position: relative;
   width: 35rem;
-  height: 25rem;
+  height: 35rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
 }
 .moveitContainer {
-  padding-bottom: 70px;
+  padding-bottom: 110px;
 }
 .welcomeContainer {
   position: relative;
@@ -49,6 +48,7 @@
 }
 
 .githubContainer {
+  margin-top: 20px;
   width: 75%;
   display: grid;
   flex-direction: row;
@@ -56,8 +56,15 @@
   align-items: center;
   height: 15%;
 }
+.githubContainer img {
+  transition: 1s;
+}
+.githubContainer img:hover {
+  filter: brightness(0%);
+}
 
 .loginContainer {
+  margin-top: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -88,4 +95,7 @@
 }
 .loginContainer button:focus {
   background: var(--green);
+}
+.loginContainer button:hover {
+  background: #49b861;
 }
