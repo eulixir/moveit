@@ -4,9 +4,11 @@ export function Landing() {
   return (
     <div className={styles.Container}>
       <section>
-        <div className={styles.logoContainer}></div>
+        <div className={styles.logoContainer}>
+          <img src="/icons/Simbolo.png" alt="" />
+        </div>
         <div className={styles.contentLoginContainer}>
-          <div className={styles.logoContainer}>
+          <div className={styles.moveitContainer}>
             <img src="/icons/logo.svg" alt="" />
           </div>
           <div className={styles.welcomeContainer}>

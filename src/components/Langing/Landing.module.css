@@ -17,6 +17,15 @@
   gap: 6.25rem;
   align-content: center;
 }
+.logoContainer {
+  position: relative;
+  height: 70vh;
+}
+.logoContainer img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
 
 .contentLoginContainer {
   position: relative;
@@ -27,7 +36,7 @@
   align-items: center;
   justify-content: space-around;
 }
-.logoContainer {
+.moveitContainer {
   padding-bottom: 70px;
 }
 .welcomeContainer {
