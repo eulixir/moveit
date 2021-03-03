@@ -1,0 +1,64 @@
+.navbarContainer {
+  background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+  filter: drop-shadow(0px 0px 60px rgba(0, 0, 0, 0.05));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  height: 100vh;
+  top: 0;
+  width: 112px;
+}
+.navbarContainer img {
+  position: absolute;
+  top: 32px;
+}
+.menuIcons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 150px;
+  width: 100%;
+}
+
+.houseDiv {
+  height: 56px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-left: 4px solid rgba(116, 96, 96, 0);
+  transition: 0.4s;
+
+  color: #999999;
+
+  cursor: pointer;
+}
+.houseDiv:hover {
+  border-radius: 0px 5px 5px 0px;
+  border-left: 4px solid var(--blue);
+  color: var(--blue);
+}
+.medalDiv {
+  height: 56px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #919191;
+
+  border: none;
+  border-left: 4px solid rgba(116, 96, 96, 0);
+  transition: 0.4s;
+
+  cursor: pointer;
+}
+.medalDiv:hover {
+  border-radius: 0px 5px 5px 0px;
+  border-left: 4px solid var(--blue);
+  color: var(--blue);
+}

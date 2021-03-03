@@ -74,14 +74,17 @@
   width: 340px;
   height: 80px;
   outline: none;
-  border: none;
-  padding: 32px;
+  border: 1.5px solid #ffffff00;
+  padding: 30.02px;
   color: var(--grey);
   background: linear-gradient(90deg, #4953b8 0%, rgba(73, 83, 184, 0.2) 100%);
   border-radius: 5px 0px 0px 5px;
+  transition: 0.4s;
 }
+
 .loginContainer input::placeholder {
   color: var(--grey);
+  transition: 0.4s;
 }
 
 .loginContainer button {
@@ -98,4 +101,13 @@
 }
 .loginContainer button:hover {
   background: #49b861;
+}
+
+.loginContainer input:focus {
+  border: 1.5px solid #414aa3;
+  box-sizing: border-box;
+}
+
+.loginContainer input:focus::placeholder {
+  color: rgba(255, 0, 0, 0);
 }

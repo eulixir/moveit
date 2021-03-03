@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import { ChallengesContext } from '../../contexts/ChallengesContext';
 import styles from './LevelUp.module.css';
+import { FaTwitter } from 'react-icons/fa';
 
 export function LevelUpModal() {
   const { level, closeLevelUpModal } = useContext(ChallengesContext);
@@ -21,7 +22,10 @@ export function LevelUpModal() {
         </button>
         <footer>
           <button type="button">
-            Compartilhar no Twitter <img src="/icons/twitter.svg" />
+            Compartilhar no Twitter
+            <span>
+              <FaTwitter />
+            </span>
           </button>
         </footer>
       </div>

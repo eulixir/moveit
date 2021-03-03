@@ -98,11 +98,13 @@
 .challengeActive footer button.challengeFailedButton {
   background: #fff5f5;
   color: #e83f5b;
+  border-radius: 0px 0px 0px 5px;
 }
 
 .challengeActive footer button.challengeSuccededButton {
   background: #f7fff5;
   color: #3fb023;
+  border-radius: 0px 0px 5px 0px;
 }
 
 .challengeActive footer button.challengeFailedButton:hover {
