@@ -1,6 +1,10 @@
 import { useState, useEffect, useContext } from 'react';
+
 import { ChallengesContext } from '../../contexts/ChallengesContext';
 import { CountdownContext } from '../../contexts/CountdownContext';
+import { IoMdArrowDropright } from 'react-icons/io';
+import { AiOutlineClose } from 'react-icons/ai';
+
 import styles from './Countdown.module.css';
 
 export function Countdown() {
@@ -33,6 +37,7 @@ export function Countdown() {
       {hasFinished ? (
         <button disabled className={styles.countDownButton}>
           Ciclo encerrado
+          <img src="/icons/succeded.svg" alt="" />
         </button>
       ) : (
         <>
@@ -43,6 +48,7 @@ export function Countdown() {
               onClick={resetCountdown}
             >
               Abandonar um ciclo
+              <AiOutlineClose size="20" />
             </button>
           ) : (
             <button
@@ -51,6 +57,7 @@ export function Countdown() {
               onClick={startCountdown}
             >
               Iniciar um cliclo
+              <IoMdArrowDropright size="30" />
             </button>
           )}
         </>
