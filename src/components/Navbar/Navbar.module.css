@@ -31,17 +31,29 @@
 
   border: none;
   border-left: 4px solid rgba(116, 96, 96, 0);
-  transition: 0.4s;
+  /* transition: 0.4s; */
 
   color: #999999;
 
   cursor: pointer;
+  position: relative;
 }
 .houseDiv:hover {
-  border-radius: 0px 5px 5px 0px;
-  border-left: 4px solid var(--blue);
   color: var(--blue);
 }
+
+.houseDiv:hover::before {
+  content: '';
+  position: absolute;
+  left: -4px;
+  top: 0;
+  bottom: 0;
+  width: 5px;
+  background-color: var(--blue);
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
 .medalDiv {
   height: 56px;
 
@@ -53,22 +65,34 @@
 
   border: none;
   border-left: 4px solid rgba(116, 96, 96, 0);
-  transition: 0.4s;
 
   cursor: pointer;
+
+  position: relative;
 }
+
 .medalDiv:hover {
-  border-radius: 0px 5px 5px 0px;
-  border-left: 4px solid var(--blue);
   color: var(--blue);
 }
-.navbarContainer a {
+
+.medalDiv:hover::before {
+  content: '';
+  position: absolute;
+  left: -4px;
+  top: 0;
+  bottom: 0;
+  width: 5px;
+  background-color: var(--blue);
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+.navbarContainer .logout {
   position: absolute;
   bottom: 32px;
   color: var(--blue);
   cursor: pointer;
   transition: 0.3s;
 }
-.navbarContainer a:hover {
+.navbarContainer .logout:hover {
   color: var(--blue-dark);
 }

@@ -8,23 +8,37 @@ import { useRouter } from 'next/router';
 export function Navbar() {
   const router = useRouter();
 
-  const handleLogout = (e) => {
+  const handleClickLogout = (e) => {
     e.preventDefault();
     router.push('/');
+  };
+
+  const handleClickHome = (e) => {
+    e.preventDefault();
+    router.push('/pomodoro');
+  };
+
+  const handleClickLeader = (e) => {
+    e.preventDefault();
+    router.push('/leaderbord');
   };
   return (
     <div className={styles.navbarContainer}>
       <img src="/icons/Logo-blue.svg" alt="" />
       <div className={styles.menuIcons}>
         <div className={styles.houseDiv}>
-          <BsHouse size="40" />
+          <a onClick={handleClickHome}>
+            <BsHouse size="40" />
+          </a>
         </div>
         <div className={styles.medalDiv}>
-          <RiMedalFill size="40" />
+          <a onClick={handleClickLeader}>
+            <RiMedalFill size="40" />
+          </a>
         </div>
       </div>
-      <a onClick={handleLogout}>
-        <CgLogOut className={styles.logout} size="40" />
+      <a className={styles.logout} onClick={handleClickLogout}>
+        <CgLogOut size="40" />
       </a>
     </div>
   );
