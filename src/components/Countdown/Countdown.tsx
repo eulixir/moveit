@@ -15,6 +15,7 @@ export function Countdown() {
     isActive,
     startCountdown,
     resetCountdown,
+    progressButton,
   } = useContext(CountdownContext);
 
   const [minuteLeft, minuteRight] = String(minutes).padStart(2, '0').split('');
@@ -49,6 +50,7 @@ export function Countdown() {
             >
               Abandonar um ciclo
               <AiOutlineClose size="20" />
+              <div style={{ width: `${progressButton}%` }}> </div>
             </button>
           ) : (
             <button

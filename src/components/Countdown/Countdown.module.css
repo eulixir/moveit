@@ -54,6 +54,8 @@
 
   outline: none;
   transition: background-color 0.2s;
+
+  position: relative;
 }
 
 .countDownButton:not(:disabled):hover {
@@ -64,6 +66,7 @@
   background: var(--white);
   color: var(--title);
 }
+
 .countDownButtonActive svg {
   margin-left: 10px;
 }
@@ -71,6 +74,16 @@
 .countDownButtonActive:not(:disabled):hover {
   background: var(--red);
   color: var(--white);
+}
+
+.countDownButtonActive:not(:disabled) div {
+  background-color: var(--green);
+  max-width: 100%;
+  height: 4px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-radius: 0 0 5px 5px;
 }
 
 .countDownButton:disabled {
