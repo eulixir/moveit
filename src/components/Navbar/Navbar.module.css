@@ -62,3 +62,13 @@
   border-left: 4px solid var(--blue);
   color: var(--blue);
 }
+.navbarContainer a {
+  position: absolute;
+  bottom: 32px;
+  color: var(--blue);
+  cursor: pointer;
+  transition: 0.3s;
+}
+.navbarContainer a:hover {
+  color: var(--blue-dark);
+}
