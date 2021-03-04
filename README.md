@@ -106,6 +106,14 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 
 </br>
 
+# Features
+
+- Add OAuth to login with github
+- Sync Progressbar in Coutndown button with a Countdown
+- Add Leaderboard pages
+- Create Landing pages
+- Add Control Session
+
 <center>
 <a href="https://github.com/joaopealves/">
   <img src="https://avatars.githubusercontent.com/u/56173070?s=400&u=8d90ad25957fec36b6d0726f2ed95c713de42103&v=4" width="100px;" alt="My photo"/>
