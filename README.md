@@ -109,10 +109,11 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 # Features
 
 - Add OAuth to login with github
-- Sync Progressbar in Coutndown button with a Countdown
-- Add Leaderboard pages
-- Create Landing pages
+- Sync Progressbar in Coutndown button with a Countdown 🏗
+- Add Leaderboard pages 
+- Create Landing pages ✅
 - Add Control Session
+- Update buttons ✅
 
 <center>
 <a href="https://github.com/joaopealves/">
