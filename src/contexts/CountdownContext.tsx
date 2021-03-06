@@ -31,8 +31,7 @@ export function CountdownProvider({ children }: CountdownProviderProps) {
   const [hasFinished, setHasFineshed] = useState(false);
   const [progressButton, setProgressButton] = useState(0);
 
-  let currentTime = 50 / time;
-  console.log(currentTime);
+  const currentTime = 100 / 60;
 
   function startCountdown() {
     setIsActive(true);
