@@ -31,6 +31,9 @@ export function CountdownProvider({ children }: CountdownProviderProps) {
   const [hasFinished, setHasFineshed] = useState(false);
   const [progressButton, setProgressButton] = useState(0);
 
+  let currentTime = 50 / time;
+  console.log(currentTime);
+
   function startCountdown() {
     setIsActive(true);
   }
@@ -38,16 +41,15 @@ export function CountdownProvider({ children }: CountdownProviderProps) {
   function resetCountdown() {
     clearTimeout(countdownTimeout);
     setIsActive(false);
-    setTime(0.1 * 60);
+    setTime(1 * 60);
     setHasFineshed(false);
     setProgressButton(0);
   }
-
   useEffect(() => {
     if (isActive && time > 0) {
+      setProgressButton(progressButton + currentTime);
       countdownTimeout = setTimeout(() => {
         setTime(time - 1);
-        setProgressButton(progressButton + 0.25);
       }, 1000);
     } else if (isActive && time === 0) {
       setHasFineshed(true);
