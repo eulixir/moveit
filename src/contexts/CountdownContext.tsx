@@ -25,13 +25,14 @@ interface CountdownProviderProps {
 export const CountdownContext = createContext({} as CountdownContextData);
 
 export function CountdownProvider({ children }: CountdownProviderProps) {
+  const countdownTime = 1 * 60;
   const { startNewChallenge } = useContext(ChallengesContext);
-  const [time, setTime] = useState(0.1 * 60);
+  const [time, setTime] = useState(countdownTime);
   const [isActive, setIsActive] = useState(false);
   const [hasFinished, setHasFineshed] = useState(false);
   const [progressButton, setProgressButton] = useState(0);
 
-  const currentTime = 100 / 60;
+  const currentTime = 100 / countdownTime;
 
   function startCountdown() {
     setIsActive(true);
@@ -40,7 +41,7 @@ export function CountdownProvider({ children }: CountdownProviderProps) {
   function resetCountdown() {
     clearTimeout(countdownTimeout);
     setIsActive(false);
-    setTime(1 * 60);
+    setTime(countdownTime);
     setHasFineshed(false);
     setProgressButton(0);
   }
