@@ -10,11 +10,11 @@ import { signOut, useSession } from 'next-auth/client';
 export function Navbar() {
   const router = useRouter();
 
-  const handleClickLogout = (e) => {
+  async function handleClickLogout(e) {
     signOut();
     e.preventDefault();
-    router.push('/');
-  };
+    await router.push('/');
+  }
 
   const handleClickHome = (e) => {
     e.preventDefault();
