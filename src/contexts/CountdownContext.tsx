@@ -22,10 +22,11 @@ interface CountdownContextData {
 interface CountdownProviderProps {
   children: ReactNode;
 }
+
 export const CountdownContext = createContext({} as CountdownContextData);
 
 export function CountdownProvider({ children }: CountdownProviderProps) {
-  const countdownTime = 1 * 60;
+  const countdownTime = 60 * 60;
   const { startNewChallenge } = useContext(ChallengesContext);
   const [time, setTime] = useState(countdownTime);
   const [isActive, setIsActive] = useState(false);
@@ -45,6 +46,7 @@ export function CountdownProvider({ children }: CountdownProviderProps) {
     setHasFineshed(false);
     setProgressButton(0);
   }
+
   useEffect(() => {
     if (isActive && time > 0) {
       setProgressButton(progressButton + currentTime);

@@ -10,6 +10,7 @@ export default function LandingPage() {
       <Head>
         <title>Início | move.it</title>
       </Head>
+
       <Landing />
     </div>
   );

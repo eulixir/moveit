@@ -1,6 +1,11 @@
 import styles from './Landing.module.css';
+import { useRouter } from 'next/router';
+
+import { signIn, useSession } from 'next-auth/client';
 
 export function Landing() {
+  const [session, loading] = useSession();
+  const router = useRouter();
   return (
     <div className={styles.Container}>
       <section>
@@ -20,9 +25,21 @@ export function Landing() {
           </div>
           <div className={styles.loginContainer}>
             <input type="text" placeholder="Digite seu username" />
-            <button type="submit">
-              <img src="/icons/login.svg" alt="" />
-            </button>
+            {!session && (
+              <>
+                <button
+                  type="submit"
+                  onClick={(): Promise<void> => signIn('auth0')}
+                >
+                  <img src="/icons/login.svg" alt="" />
+                </button>
+              </>
+            )}
+            {session && (
+              <button type="submit" onLoad={() => router.push('/pomodoro')}>
+                <img src="/icons/login.svg" alt="" />
+              </button>
+            )}
           </div>
         </div>
       </section>

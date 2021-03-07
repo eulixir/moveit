@@ -5,10 +5,13 @@ import { CgLogOut } from 'react-icons/cg';
 
 import { useRouter } from 'next/router';
 
+import { signOut, useSession } from 'next-auth/client';
+
 export function Navbar() {
   const router = useRouter();
 
   const handleClickLogout = (e) => {
+    signOut();
     e.preventDefault();
     router.push('/');
   };
