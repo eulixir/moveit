@@ -4,12 +4,22 @@ import Providers from 'next-auth/providers';
 
 const options: InitOptions = {
   providers: [
-    Providers.Auth0({
-      clientId: process.env.AUTH0_CLIENT_ID,
-      clientSecret: process.env.AUTH0_CLIENT_SECRET,
-      domain: process.env.AUTH0_DOMAIN,
+    Providers.GitHub({
+      clientId: process.env.GITHUB_CLIENT_ID,
+      clientSecret: process.env.GITHUB_CLIENT_SECRET,
     }),
   ],
+  callbacks: {
+    session: async (session, user: User) => {
+      return Promise.resolve({
+        ...session,
+        user,
+      });
+    },
+    redirect: async () => {
+      return Promise.resolve(`${process.env.PRODUCTION_URL}`);
+    },
+  },
 };
 
 export default (

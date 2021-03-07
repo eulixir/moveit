@@ -29,7 +29,7 @@ export function Landing() {
               <>
                 <button
                   type="submit"
-                  onClick={(): Promise<void> => signIn('auth0')}
+                  onClick={(): Promise<void> => signIn('github')}
                 >
                   <img src="/icons/login.svg" alt="" />
                 </button>
