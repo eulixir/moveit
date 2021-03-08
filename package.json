@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@types/styled-components": "^5.1.7",
+    "@types/next-auth": "^3.1.25",
     "js-cookie": "^2.2.1",
     "next": "10.0.7",
     "next-auth": "^3.7.0",
@@ -19,7 +20,6 @@
   },
   "devDependencies": {
     "@types/js-cookie": "^2.2.6",
-    "@types/next-auth": "^3.1.25",
     "@types/node": "^14.14.31",
     "@types/react": "^17.0.2",
     "@types/react-dom": "^17.0.1",

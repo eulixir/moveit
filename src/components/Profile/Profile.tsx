@@ -8,9 +8,11 @@ export function Profile() {
   const [session] = useSession();
 
   const { level } = useContext(ChallengesContext);
+
+  console.log(session.user.image);
   return (
     <div className={styles.profileContainer}>
-      <img src={session.user.picture} alt="Profile picture" />
+      <img src={session.user.image} alt="Profile picture" />
       <div>
         <strong>{session.user.name}</strong>
         <p>
