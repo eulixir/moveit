@@ -1,4 +1,4 @@
-import { Landing } from '../components/Langing/Landing';
+import { Landing } from '../components/Landing/Landing';
 
 import Head from 'next/head';
 

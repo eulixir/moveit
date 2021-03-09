@@ -18,7 +18,7 @@ const options: InitOptions = {
     session: async (session, user: User) => {
       return Promise.resolve({
         ...session,
-        user,
+        ...user,
       });
     },
     redirect: async () => {
