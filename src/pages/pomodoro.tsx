@@ -30,8 +30,8 @@ export default function Home(props: HomeProps) {
         currentExperience={props.currentExperience}
         challengesCompleted={props.challengesCompleted}
       >
+        <Navbar />
         <div className={styles.container}>
-          <Navbar />
           <Head>
             <title>Início | move.it</title>
           </Head>

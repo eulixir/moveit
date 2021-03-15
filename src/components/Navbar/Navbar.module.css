@@ -96,3 +96,54 @@
 .navbarContainer .logout:hover {
   color: var(--blue-dark);
 }
+
+@media (max-width: 1200px) {
+  .navbarContainer {
+    background: white;
+    -webkit-box-shadow: inset 0px -200px 300px -66px rgba(240, 240, 240, 1);
+    -moz-box-shadow: inset 0px -200px 300px -66px rgba(240, 240, 240, 1);
+    box-shadow: inset 0px -200px 300px -66px rgba(240, 240, 240, 1);
+    filter: none;
+    height: 70px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .menuIcons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    height: 70px;
+    width: 20%;
+  }
+  .navbarContainer .logout {
+    right: 15px;
+    bottom: 15px;
+  }
+
+  .navbarContainer img {
+    left: 15px;
+    top: 15px;
+  }
+  .medalDiv:hover::before {
+    left: 0;
+    top: -10px;
+    bottom: 0;
+    height: 8px;
+    width: 100%;
+    background-color: var(--blue);
+    border-radius: 0px 0px 10px 10px;
+  }
+  .houseDiv:hover::before {
+    left: 0;
+    top: -10px;
+    bottom: 0;
+    height: 8px;
+    width: 100%;
+    background-color: var(--blue);
+    border-radius: 0px 0px 10px 10px;
+  }
+}
