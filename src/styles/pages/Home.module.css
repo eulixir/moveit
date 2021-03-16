@@ -15,7 +15,11 @@
   gap: 6.25rem;
   align-content: center;
 }
+
 @media (max-width: 1200px) {
+  .contaier {
+    height: 130px;
+  }
   .container section {
     display: flex;
     flex-direction: column;

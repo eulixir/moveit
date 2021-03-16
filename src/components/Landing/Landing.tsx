@@ -1,6 +1,10 @@
 import styles from './Landing.module.css';
 import { useRouter } from 'next/router';
 
+import { ImGoogle, ImGithub } from 'react-icons/im';
+
+import { DiReact } from 'react-icons/di';
+
 import { signIn, useSession } from 'next-auth/client';
 
 export function Landing() {
@@ -20,18 +24,26 @@ export function Landing() {
             <strong>Bem-vindo</strong>
           </div>
           <div className={styles.githubContainer}>
-            <img src="/icons/github.svg"></img>
-            Faça login com seu github para começar
+            <DiReact size={50} />
+            Faça login com sua conta github ou google para começar
           </div>
           <div className={styles.loginContainer}>
-            <input type="text" placeholder="Digite seu username" />
             {!session && (
               <>
                 <button
                   type="submit"
                   onClick={(): Promise<void> => signIn('github')}
                 >
-                  <img src="/icons/login.svg" alt="" />
+                  <ImGithub size={32} />
+                  Github
+                </button>
+
+                <button
+                  type="submit"
+                  onClick={(): Promise<void> => signIn('google')}
+                >
+                  <ImGoogle size={32} />
+                  Google
                 </button>
               </>
             )}
