@@ -99,10 +99,12 @@
 
 @media (max-width: 1200px) {
   .navbarContainer {
-    background: white;
-    -webkit-box-shadow: inset 0px -200px 300px -66px rgba(240, 240, 240, 1);
-    -moz-box-shadow: inset 0px -200px 300px -66px rgba(240, 240, 240, 1);
-    box-shadow: inset 0px -200px 300px -66px rgba(240, 240, 240, 1);
+    background: rgb(255, 255, 255);
+    background: linear-gradient(
+      169deg,
+      rgba(255, 255, 255, 1) 35%,
+      rgba(242, 242, 245, 1) 100%
+    );
     filter: none;
     height: 70px;
     width: 100%;

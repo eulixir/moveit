@@ -116,3 +116,8 @@
   background: var(--green);
   color: var(--white);
 }
+@media (max-width: 1200px) {
+  .challengeBoxContainer {
+    height: 500px;
+  }
+}
