@@ -1,4 +1,4 @@
-import styles from './Privacy.module.css';
+import styles from './Terms.module.css';
 
 import { useRouter } from 'next/router';
 
@@ -7,10 +7,10 @@ export default function PrivacyButton() {
 
   return (
     <div
-      onClick={() => router.push('/privacy')}
-      className={styles.PrivacyContainer}
+      onClick={() => router.push('/terms')}
+      className={styles.TermsContainer}
     >
-      <p>Privacidade</p>
+      <p>Termos</p>
     </div>
   );
 }

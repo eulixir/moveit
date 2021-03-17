@@ -1,9 +1,10 @@
-.PrivacyContainer {
+.TermsContainer {
   color: var(--blue);
   font: 700 1rem Inter;
+
   margin-top: 20px;
   cursor: pointer;
 }
-.PrivacyContainer:hover {
+.TermsContainer:hover {
   filter: brightness(70%);
 }
