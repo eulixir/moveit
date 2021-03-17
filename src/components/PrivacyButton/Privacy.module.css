@@ -1,0 +1,11 @@
+.PrivacyContainer {
+  color: var(--blue);
+  font: 700 1rem Inter;
+  position: absolute;
+  margin: 0 auto;
+  margin-top: 20px;
+  cursor: pointer;
+}
+.PrivacyContainer:hover {
+  filter: brightness(70%);
+}

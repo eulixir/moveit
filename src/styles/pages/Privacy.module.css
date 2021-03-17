@@ -1,0 +1,90 @@
+.PrivacyContainer {
+  height: 100vh;
+  max-height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+
+  /* position: fixed;
+  top: 0;
+  left: 0; */
+}
+
+.PrivacyContainer div {
+  margin-left: 112px;
+  margin-top: 5rem;
+  width: 60%;
+
+  display: flex;
+  justify-content: center;
+  background-color: rgb(255, 255, 255);
+  overflow: auto;
+
+  border-radius: 15px;
+
+  -webkit-box-shadow: 0px 0px 35px 5px rgba(153, 153, 153, 1);
+  -moz-box-shadow: 0px 0px 35px 5px rgba(153, 153, 153, 1);
+  box-shadow: 0px 0px 35px 5px rgba(153, 153, 153, 1);
+}
+
+.TextContent {
+  width: 80%;
+  margin-top: 5%;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+.TextContent h2 {
+  margin-top: 5%;
+  margin-bottom: 20px;
+  color: var(--blue);
+}
+.TextContent p {
+  margin-top: 10px;
+}
+
+.TextContent h3 {
+  margin-top: 5%;
+  margin-bottom: 20px;
+  color: rgb(59, 59, 59);
+}
+.TextContent li {
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+.PrivacyContainer div::-webkit-scrollbar {
+  border: 2px solid var(--default-blue);
+  display: flex;
+  width: 10px;
+}
+
+.PrivacyContainer div::-webkit-scrollbar-thumb {
+  background: var(--blue);
+  width: 20px;
+  border-radius: 10px;
+}
+
+.PrivacyContainer div::-webkit-scrollbar-track {
+  background: rgb(255, 255, 255);
+}
+
+.TextContent strong {
+  margin-top: 2%;
+  padding-bottom: 100px;
+  color: var(--blue);
+}
+
+@media (max-width: 1200px) {
+  .PrivacyContainer {
+    position: fixed;
+  }
+  .PrivacyContainer div {
+    margin-left: 0px;
+    width: 80%;
+    margin-top: 120px;
+  }
+  .TextContent {
+    text-align: center;
+  }
+}

@@ -14,6 +14,7 @@ import Head from 'next/head';
 import { CountdownProvider } from '../contexts/CountdownContext';
 import React from 'react';
 import { ChallengesProvider } from '../contexts/ChallengesContext';
+import PrivacyButton from '../components/PrivacyButton/PrivacyButton';
 
 interface HomeProps {
   level: number;
@@ -45,6 +46,7 @@ export default function Home(props: HomeProps) {
               </div>
               <div>
                 <ChallengeBox />
+                <PrivacyButton />
               </div>
             </section>
           </CountdownProvider>
