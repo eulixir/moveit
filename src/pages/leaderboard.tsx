@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Leaderbord | move.it</title>
+        <title>Leaderboard | move.it</title>
       </Head>
       <Navbar />
       nhaaa

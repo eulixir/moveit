@@ -23,7 +23,7 @@ export function Navbar() {
 
   const handleClickLeader = (e) => {
     e.preventDefault();
-    router.push('/leaderbord');
+    router.push('/leaderboard');
   };
   return (
     <div className={styles.navbarContainer}>

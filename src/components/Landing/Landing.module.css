@@ -112,6 +112,21 @@
   background: rgba(233, 20, 20, 0.753);
 }
 
+.LoadingContainer {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--blue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.LoadingContainer img {
+  position: absolute;
+  top: -100px;
+}
+
 @media (max-width: 600px) {
   .Container section {
     height: 100vh;
