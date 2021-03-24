@@ -109,8 +109,9 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 # Features
 
 - Add Auth0 to login with github ✅
+- Add Auth0 to login with google ✅
 - Sync Progressbar in Coutndown button with a Countdown ✅
-- Add Leaderboard pages
+- Add Leaderboard pages ✅
 - Create Landing pages ✅
 - Add Control Session
 - Update buttons ✅
