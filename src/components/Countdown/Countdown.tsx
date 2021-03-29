@@ -58,7 +58,7 @@ export function Countdown() {
               className={styles.countDownButton}
               onClick={startCountdown}
             >
-              Iniciar um cliclo
+              Iniciar um ciclo
               <IoMdArrowDropright size="30" />
             </button>
           )}

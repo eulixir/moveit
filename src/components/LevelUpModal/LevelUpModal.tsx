@@ -5,6 +5,7 @@ import { FaTwitter } from 'react-icons/fa';
 
 export function LevelUpModal() {
   const { level, closeLevelUpModal } = useContext(ChallengesContext);
+
   return (
     <div className={styles.overlay}>
       <div className={styles.container}>
