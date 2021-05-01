@@ -1,0 +1,27 @@
+.container404 {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--blue);
+  font-size: 2.1rem;
+  flex-direction: column;
+  background: url('/icons/levelup.svg') no-repeat center;
+  background-size: contain;
+  text-align: center;
+}
+
+.container404 button {
+  margin-top: 100px;
+
+  width: 300px;
+  height: 70px;
+
+  border-radius: 8px;
+  border: none;
+  outline: none;
+
+  background: var(--blue);
+  color: white;
+}

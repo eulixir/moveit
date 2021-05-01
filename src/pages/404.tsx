@@ -1,11 +1,13 @@
+import styles from '../styles/pages/404.module.css';
+
 import { useRouter } from 'next/router';
 
 export default function Custom404() {
   const router = useRouter();
 
   return (
-    <div className="Container404">
-      <div>Opa meu mano, esta indo para aonde?</div>
+    <div className={styles.container404}>
+      <div>Opa meu mano, está indo aonde?</div>
       <button onClick={() => router.push('/')}>Home</button>
     </div>
   );
