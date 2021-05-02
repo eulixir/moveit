@@ -1,5 +1,5 @@
 .Container {
-  /* height: 100vh; */
+  height: 100vh;
   max-width: 100vw;
   width: 100%;
   display: flex;
@@ -27,7 +27,6 @@
 
 .contentLoginContainer {
   position: relative;
-  width: 35rem;
   height: 100%;
   display: flex;
   flex-direction: column;
