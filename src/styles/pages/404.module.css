@@ -24,4 +24,9 @@
 
   background: var(--blue);
   color: white;
+
+  transition: 0.3s;
+}
+.container404 button:hover {
+  filter: brightness(90%);
 }
