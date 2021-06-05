@@ -115,9 +115,9 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 - Create Landing pages ✅
 - Add Control Session
 - Update buttons ✅
-- Add Backend
-- Add counter in local storage (if the user trade page) 
-- Add login to save user data in database
+- Add Backend (Working in Elixir, you can contribue in the project in <a href="https://github.com/joaopealves/exmoveit">exmoveit</a>)
+- Add counter in local storage (if the user trade page)
+- Add login to save user data in database (working)
 
 <center>
 <a href="https://github.com/joaopealves/">
