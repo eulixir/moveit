@@ -29,7 +29,7 @@ export function Landing() {
               </div>
               <div className={styles.githubContainer}>
                 <DiReact size={50} />
-                Faça login com sua conta github ou google para começar
+                Faça login com sua conta github <br></br> ou google para começar
               </div>
               <div className={styles.loginContainer}>
                 <button
