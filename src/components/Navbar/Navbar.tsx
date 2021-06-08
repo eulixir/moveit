@@ -29,15 +29,11 @@ export function Navbar() {
     <div className={styles.navbarContainer}>
       <img src="/icons/Logo-blue.svg" alt="" />
       <div className={styles.menuIcons}>
-        <div className={styles.houseDiv}>
-          <a onClick={handleClickHome}>
-            <BsHouse size="40" />
-          </a>
+        <div onClick={handleClickHome} className={styles.houseDiv}>
+          <BsHouse size="40" />
         </div>
-        <div className={styles.medalDiv}>
-          <a onClick={handleClickLeader}>
-            <RiMedalFill size="40" />
-          </a>
+        <div onClick={handleClickLeader} className={styles.medalDiv}>
+          <RiMedalFill size="40" />
         </div>
       </div>
       <a className={styles.logout} onClick={handleClickLogout}>

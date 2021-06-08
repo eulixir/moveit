@@ -4,13 +4,9 @@
   width: 100vw;
   display: flex;
   justify-content: center;
-
-  /* position: fixed;
-  top: 0;
-  left: 0; */
 }
 
-.PrivacyContainer div {
+.PrivacyContainer .ContentContainer {
   margin-left: 112px;
   margin-top: 5rem;
   width: 60%;
@@ -53,19 +49,19 @@
   margin-bottom: 2%;
 }
 
-.PrivacyContainer div::-webkit-scrollbar {
+.PrivacyContainer .ContentContainer::-webkit-scrollbar {
   border: 2px solid var(--default-blue);
   display: flex;
   width: 10px;
 }
 
-.PrivacyContainer div::-webkit-scrollbar-thumb {
+.PrivacyContainer .ContentContainer::-webkit-scrollbar-thumb {
   background: var(--blue);
   width: 20px;
   border-radius: 10px;
 }
 
-.PrivacyContainer div::-webkit-scrollbar-track {
+.PrivacyContainer .ContentContainer::-webkit-scrollbar-track {
   background: rgba(255, 255, 255, 0);
 }
 
@@ -75,16 +71,36 @@
   color: var(--blue);
 }
 
+.backIcon {
+  background-color: white;
+  width: 50%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: absolute;
+}
+
 @media (max-width: 1200px) {
   .PrivacyContainer {
     position: fixed;
   }
-  .PrivacyContainer div {
+  .PrivacyContainer .ContentContainer {
     margin-left: 0px;
     width: 80%;
-    margin-top: 120px;
+    margin-top: 50px;
   }
   .TextContent {
     text-align: center;
+  }
+
+  .backIcon {
+    background-color: transparent;
+    width: 70%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: absolute;
   }
 }

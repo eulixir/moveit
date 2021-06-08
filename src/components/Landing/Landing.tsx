@@ -36,16 +36,20 @@ export function Landing() {
                   type="submit"
                   onClick={(): Promise<void> => signIn('github')}
                 >
-                  <ImGithub size={32} />
-                  Github
+                  <div className={styles.GithubOpacity}>Github</div>
+                  <div className={styles.GithubIconOpacity}>
+                    <ImGithub size={32} />
+                  </div>
                 </button>
 
                 <button
                   type="submit"
                   onClick={(): Promise<void> => signIn('google')}
                 >
-                  <ImGoogle size={32} />
-                  Google
+                  <div className={styles.GoogleIconOpacity}>
+                    <ImGoogle size={32} />
+                  </div>
+                  <div className={styles.GoogleOpacity}>Google</div>
                 </button>
               </div>
             </div>

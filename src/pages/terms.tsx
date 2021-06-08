@@ -1,13 +1,18 @@
 import { Navbar } from '../components/Navbar/Navbar';
 
+import { useRouter } from 'next/router';
+
 import Head from 'next/head';
 
 import React from 'react';
 
 import styles from '../styles/pages/Privacy.module.css';
 
+import { BiArrowBack } from 'react-icons/bi';
+
 export default function Home() {
-  console.log('não é possível');
+  const router = useRouter();
+
   return (
     <>
       <Head>
@@ -16,7 +21,12 @@ export default function Home() {
       <Navbar />
 
       <div className={styles.PrivacyContainer}>
-        <div>
+        <div className={styles.ContentContainer}>
+          <div className={styles.backIcon}>
+            <a onClick={() => router.push('/pomodoro')} id="backIcon">
+              <BiArrowBack size={32} color="var(--blue)" />
+            </a>
+          </div>
           <p className={styles.TextContent}>
             <h2>1. Termos</h2>
             <p>
