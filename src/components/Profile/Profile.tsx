@@ -7,6 +7,7 @@ import { useSession } from 'next-auth/client';
 
 export function Profile() {
   const [session] = useSession();
+  console.log(session);
   const email = session.user.email;
 
   const { level } = useContext(ChallengesContext);
