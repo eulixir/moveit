@@ -72,6 +72,7 @@
 }
 
 .backIcon {
+  cursor: pointer;
   background-color: white;
   width: 50%;
   height: 80px;
