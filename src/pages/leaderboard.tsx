@@ -35,7 +35,6 @@ export default function Home() {
             <Card position="8" />
             <Card position="9" />
             <Card position="10" />
-            <Card position="banana" />
           </div>
         </div>
       </div>

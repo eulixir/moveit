@@ -46,3 +46,35 @@
 .cardUserProfile div {
   padding-left: 17px;
 }
+@media (max-width: 1200px) {
+  .cardBox {
+    width: 95%;
+
+    background: white;
+
+    border-radius: 5px 5px 5px 5px;
+
+    height: 96px;
+
+    margin-bottom: 8px;
+
+    display: grid;
+    flex-direction: column;
+    align-items: center;
+    grid-template-columns: 10% 49% 23% 18%;
+  }
+  .leaderboardContent {
+    width: 80%;
+    height: 95vh;
+    align-self: flex-end;
+    margin: 0 auto;
+  }
+  .cardUserProfile {
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+
+    padding-left: 1px;
+  }
+}
