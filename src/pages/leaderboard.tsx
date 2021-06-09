@@ -1,7 +1,8 @@
+import styles from '../styles/pages/Leaderboard.module.css';
+
 import { Navbar } from '../components/Navbar/Navbar';
 
 import Head from 'next/head';
-
 import React from 'react';
 
 export default function Home() {
@@ -10,8 +11,10 @@ export default function Home() {
       <Head>
         <title>Leaderboard | move.it</title>
       </Head>
-      <Navbar />
-      nhaaa
+      <div className={styles.leaderboardContainer}>
+        <Navbar />
+        <div className={styles.leaderboardContent}>Leaderboard</div>
+      </div>
     </>
   );
 }
