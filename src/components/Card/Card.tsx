@@ -1,12 +1,12 @@
 import { useSession } from 'next-auth/client';
 import styles from './Card.module.css';
 
-export default function Card() {
+export default function Card(props) {
   const [session] = useSession();
 
   return (
     <div className={styles.cardBox}>
-      <div className={styles.cardPosition}>1</div>
+      <div className={styles.cardPosition}>{props.position}</div>
       <div className={styles.cardUserProfile}>
         <img src={session.user.image} alt="Profile picture" />
         <div>

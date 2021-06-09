@@ -25,7 +25,17 @@ export default function Home() {
             <div>EXPERIÊNCIA</div>
           </div>
           <div className={styles.cardContainer}>
-            <Card />
+            <Card position="1" />
+            <Card position="2" />
+            <Card position="3" />
+            <Card position="4" />
+            <Card position="5" />
+            <Card position="6" />
+            <Card position="7" />
+            <Card position="8" />
+            <Card position="9" />
+            <Card position="10" />
+            <Card position="banana" />
           </div>
         </div>
       </div>
