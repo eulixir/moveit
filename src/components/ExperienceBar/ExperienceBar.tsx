@@ -10,7 +10,6 @@ export function ExperienceBar() {
     Math.round(currentExperience * 100) / experienceToNextLevel;
 
   let totalExperience = experienceToNextLevel + currentExperience * 100;
-  console.log(totalExperience);
 
   return (
     <header className={styles.experienceBar}>

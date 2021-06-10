@@ -1,7 +1,7 @@
 // import api from '../../services/api';
 
-export function sendEmail(email) {
-  console.log(email);
+export function sendUserData(email, photo, name) {
+  console.log(email, photo, name);
 }
 
 export function sendProfileData(level, currentExperience, challengesCompleted) {
