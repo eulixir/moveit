@@ -2,7 +2,8 @@ import React, { createContext, useState, ReactNode, useEffect } from 'react';
 import challenges from '../../challenges.json';
 import Cookies from 'js-cookie';
 import { LevelUpModal } from '../components/LevelUpModal/LevelUpModal';
-import { sendProfileData } from '../contexts/ApiContext';
+// import { sendProfileData } from '../contexts/ApiContext';
+
 export const ChallengesContext = createContext({} as ChallengesContextData);
 
 interface Challenge {
@@ -106,6 +107,10 @@ export function ChallengesProvider({
     setActiveChallenge(null);
     setChallengesCompleted(challengesCompleted + 1);
   }
+  useEffect(() => {
+    // api.post()
+  }, [challengesCompleted]);
+
   return (
     <ChallengesContext.Provider
       value={{

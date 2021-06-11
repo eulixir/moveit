@@ -38,10 +38,6 @@ export default function Home() {
     setUser(user_json);
   }, []);
 
-  user.map((nabanas) => {
-    console.log(nabanas.user.profile_data.challenges_completed);
-  });
-
   return (
     <>
       <Head>

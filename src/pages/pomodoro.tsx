@@ -25,6 +25,7 @@ interface HomeProps {
 
 export default function Home(props: HomeProps) {
   const session = useSession();
+
   return (
     <>
       <ChallengesProvider
