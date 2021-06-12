@@ -108,7 +108,7 @@ export function ChallengesProvider({
     setChallengesCompleted(challengesCompleted + 1);
   }
   useEffect(() => {
-    // api.post()
+    console.log(level, currentExperience, completeChallenge);
   }, [challengesCompleted]);
 
   return (

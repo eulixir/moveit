@@ -10,7 +10,7 @@ import styles from '../styles/pages/Privacy.module.css';
 
 import { BiArrowBack } from 'react-icons/bi';
 
-export default function Home() {
+export default function Privacy() {
   const router = useRouter();
 
   return (
