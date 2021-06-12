@@ -18,7 +18,6 @@ export function Profile() {
   const [isNewUser, setIsNewUser] = useState(false);
 
   function sendUserData(email, image, name) {
-    // console.log(email, image, name);
     api
       .post(url, {
         email: email,
@@ -30,7 +29,6 @@ export function Profile() {
       })
       .catch(function (error) {
         console.log(error.response.data);
-        return <h1>Teste</h1>;
       });
   }
 
@@ -45,19 +43,26 @@ export function Profile() {
     return (
       <Modal
         isOpen={isNewUser}
-        // onAfterOpen={afterOpenModal}
-        // onRequestClose={closeModal}
-        // style={customStyles}
-        contentLabel="Example Modal"
+        className={styles.modalContainer}
+        contentLabel="Welcome to moveit"
       >
-        <div
-          style={{
-            backgroundColor: '#b90a0a',
-            width: '500px',
-            height: '500px',
-          }}
-        >
-          <h1 onClick={() => setIsNewUser(false)}>Banana</h1>
+        <div className={styles.container}>
+          <span>
+            <strong>Opa, bem vindo ao moveit</strong>
+            <br />
+            <strong>Esta é uma aplicação prática da técnica de Pomodoro</strong>
+          </span>
+          <div className={styles.ModalContent}>
+            <img src="/modal_image.svg" alt="Exercise!" />
+            Para se exercitar enquanto estuda, e disputar com outros moviters.
+          </div>
+          <button
+            onClick={() => setIsNewUser(false)}
+            className={styles.closeButton}
+            type="button"
+          >
+            VAMOS NESSA!
+          </button>
         </div>
       </Modal>
     );
