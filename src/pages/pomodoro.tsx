@@ -1,21 +1,19 @@
 import { CompletedChallenges } from '../components/CompletedChallenge/CompletedChallenge';
 import { ExperienceBar } from '../components/ExperienceBar/ExperienceBar';
 import { ChallengeBox } from '../components/ChallengeBox/ChallengeBox';
+import PrivacyButton from '../components/PrivacyButton/PrivacyButton';
+import { ChallengesProvider } from '../contexts/ChallengesContext';
+import { CountdownProvider } from '../contexts/CountdownContext';
+import TermsButton from '../components/TermsButton/TermsButton';
 import { Countdown } from '../components/Countdown/Countdown';
 import { Profile } from '../components/Profile/Profile';
 import { Navbar } from '../components/Navbar/Navbar';
-import { GetServerSideProps } from 'next';
-
 import styles from '../styles/pages/Home.module.css';
-
 import { useSession } from 'next-auth/client';
-
+import { GetServerSideProps } from 'next';
+import api from '../../services/api';
 import Head from 'next/head';
-import { CountdownProvider } from '../contexts/CountdownContext';
 import React from 'react';
-import { ChallengesProvider } from '../contexts/ChallengesContext';
-import PrivacyButton from '../components/PrivacyButton/PrivacyButton';
-import TermsButton from '../components/TermsButton/TermsButton';
 
 interface HomeProps {
   level: number;
@@ -24,8 +22,6 @@ interface HomeProps {
 }
 
 export default function Home(props: HomeProps) {
-  const session = useSession();
-
   return (
     <>
       <ChallengesProvider
@@ -64,6 +60,7 @@ export default function Home(props: HomeProps) {
 }
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
+  api.get('http://localhost:4000/api/profile_data/jotalmeida005@gmail.com');
   const { level, currentExperience, challengesCompleted } = ctx.req.cookies;
   return {
     props: {
