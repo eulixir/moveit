@@ -13,6 +13,7 @@ import { GetServerSideProps } from 'next';
 import Head from 'next/head';
 import React from 'react';
 import api from 'axios';
+import { getSession } from 'next-auth/client';
 
 interface HomeProps {
   level: number;
@@ -57,25 +58,35 @@ export default function Home(props: HomeProps) {
     </>
   );
 }
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+  const session = await getSession({ ctx });
+  const email = session?.user.email;
+  const result = await api
+    .get('http://localhost:4000/api/profile_data/' + email)
+    .then(function (response) {
+      const level: number =
+        response.data.profile_data.profile_data.current_level;
+      const currentExperience: number =
+        response.data.profile_data.profile_data.current_experience;
+      const tasks_completed: number =
+        response.data.profile_data.profile_data.tasks_completed;
+      return {
+        props: {
+          level: Number(level),
+          currentExperience: Number(currentExperience),
+          challengesCompleted: Number(tasks_completed),
+        },
+      };
+    })
+    .catch(function (error) {
+      return {
+        props: {
+          level: Number(1),
+          currentExperience: Number(0),
+          challengesCompleted: Number(0),
+        },
+      };
+    });
 
-export const getServerSideProps: GetServerSideProps = async () => {
-  const result = await api.get(
-    'http://localhost:4000/api/profile_data/jotalmeida007@hotmail.com'
-  );
-
-  const level = result.data.profile_data.profile_data.current_level;
-  const currentExperience =
-    result.data.profile_data.profile_data.current_experience;
-  const tasks_completed = result.data.profile_data.profile_data.tasks_completed;
-
-  // console.log(result.data);
-
-  // const { level, currentExperience, challengesCompleted } = ctx.req.cookies;
-  return {
-    props: {
-      level: Number(level),
-      currentExperience: Number(currentExperience),
-      challengesCompleted: Number(tasks_completed),
-    },
-  };
+  return result;
 };

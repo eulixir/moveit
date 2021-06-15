@@ -1,9 +1,10 @@
-import { useContext, useEffect, useState } from 'react';
 import { ChallengesContext } from '../../contexts/ChallengesContext';
-import styles from './Profile.module.css';
-import Modal from 'react-modal';
+import { useContext, useEffect, useState } from 'react';
 import { useSession } from 'next-auth/client';
+import styles from './Profile.module.css';
 import api from '../../../services/api';
+import Modal from 'react-modal';
+import getServerSideProps from '../../pages/pomodoro';
 
 export function Profile() {
   const [session] = useSession();
@@ -19,6 +20,7 @@ export function Profile() {
   const [isNewUser, setIsNewUser] = useState(false);
 
   function sendUserData(email, image, name) {
+    // getServerSideProps(email);
     api
       .post(url, {
         email: email,
