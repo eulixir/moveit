@@ -2,6 +2,8 @@ import React, { createContext, useState, ReactNode, useEffect } from 'react';
 import challenges from '../../challenges.json';
 import Cookies from 'js-cookie';
 import { LevelUpModal } from '../components/LevelUpModal/LevelUpModal';
+import { session, useSession } from 'next-auth/client';
+import api from '../../services/api';
 
 export const ChallengesContext = createContext({} as ChallengesContextData);
 
@@ -54,11 +56,24 @@ export function ChallengesProvider({
   }, []);
 
   useEffect(() => {
-    Cookies.set('level', String(level));
-    Cookies.set('currentExperience', String(currentExperience));
-    Cookies.set('challengesCompleted', String(challengesCompleted));
-  }, [level, currentExperience, challengesCompleted]);
+    send_data_to_api(challengesCompleted, level, currentExperience);
+  }, [challengesCompleted]);
 
+  function send_data_to_api(challengesCompleted, level, currentExperience) {
+    api
+      .put('http://localhost:4000/api/profile_data/', {
+        current_level: level,
+        current_experience: currentExperience,
+        tasks_completed: challengesCompleted,
+        email: 'jotalmeida007@hotmail.com',
+      })
+      .then(function (response) {
+        console.log('Dados enviados para o backend com sucesso 🚀');
+      })
+      .catch(function (error) {
+        console.log('banana');
+      });
+  }
   function levelUp() {
     setLevel(level + 1);
     new Audio('./levelup.mp3').play();
@@ -105,9 +120,6 @@ export function ChallengesProvider({
     setActiveChallenge(null);
     setChallengesCompleted(challengesCompleted + 1);
   }
-  useEffect(() => {
-    console.log(level, currentExperience, completeChallenge);
-  }, [challengesCompleted]);
 
   return (
     <ChallengesContext.Provider

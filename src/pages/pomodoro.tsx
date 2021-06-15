@@ -9,11 +9,10 @@ import { Countdown } from '../components/Countdown/Countdown';
 import { Profile } from '../components/Profile/Profile';
 import { Navbar } from '../components/Navbar/Navbar';
 import styles from '../styles/pages/Home.module.css';
-import { useSession } from 'next-auth/client';
 import { GetServerSideProps } from 'next';
-import api from '../../services/api';
 import Head from 'next/head';
 import React from 'react';
+import api from 'axios';
 
 interface HomeProps {
   level: number;
@@ -59,14 +58,24 @@ export default function Home(props: HomeProps) {
   );
 }
 
-export const getServerSideProps: GetServerSideProps = async (ctx) => {
-  api.get('http://localhost:4000/api/profile_data/jotalmeida005@gmail.com');
-  const { level, currentExperience, challengesCompleted } = ctx.req.cookies;
+export const getServerSideProps: GetServerSideProps = async () => {
+  const result = await api.get(
+    'http://localhost:4000/api/profile_data/jotalmeida007@hotmail.com'
+  );
+
+  const level = result.data.profile_data.profile_data.current_level;
+  const currentExperience =
+    result.data.profile_data.profile_data.current_experience;
+  const tasks_completed = result.data.profile_data.profile_data.tasks_completed;
+
+  // console.log(result.data);
+
+  // const { level, currentExperience, challengesCompleted } = ctx.req.cookies;
   return {
     props: {
       level: Number(level),
       currentExperience: Number(currentExperience),
-      challengesCompleted: Number(challengesCompleted),
+      challengesCompleted: Number(tasks_completed),
     },
   };
 };

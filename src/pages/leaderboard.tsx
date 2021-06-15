@@ -30,6 +30,61 @@ export default function Home() {
         position: '2',
       },
     },
+    {
+      user: {
+        name: 'Rafa Camarda',
+        profile_data: {
+          level: '12',
+          experience: '12223',
+          challenges_completed: '5',
+        },
+        position: '2',
+      },
+    },
+    {
+      user: {
+        name: 'Rafa Camarda',
+        profile_data: {
+          level: '12',
+          experience: '12223',
+          challenges_completed: '5',
+        },
+        position: '2',
+      },
+    },
+    {
+      user: {
+        name: 'Rafa Camarda',
+        profile_data: {
+          level: '12',
+          experience: '12223',
+          challenges_completed: '5',
+        },
+        position: '3',
+      },
+    },
+    {
+      user: {
+        name: 'Rafa Camarda',
+        profile_data: {
+          level: '12',
+          experience: '12223',
+          challenges_completed: '5',
+        },
+        position: '4',
+      },
+    },
+    {
+      user: {
+        name: 'Rafa Camarda',
+        profile_data: {
+          level: '12',
+          experience: '12223',
+          challenges_completed: '5',
+        },
+        position: '5',
+      },
+    },
   ];
 
   const [user, setUser] = useState([]);
