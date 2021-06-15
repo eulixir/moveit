@@ -1,8 +1,6 @@
 import React, { createContext, useState, ReactNode, useEffect } from 'react';
-import challenges from '../../challenges.json';
-import Cookies from 'js-cookie';
 import { LevelUpModal } from '../components/LevelUpModal/LevelUpModal';
-import { session, useSession } from 'next-auth/client';
+import challenges from '../../challenges.json';
 import api from '../../services/api';
 
 export const ChallengesContext = createContext({} as ChallengesContextData);
@@ -67,11 +65,11 @@ export function ChallengesProvider({
         tasks_completed: challengesCompleted,
         email: 'jotalmeida007@hotmail.com',
       })
-      .then(function (response) {
+      .then(function () {
         console.log('Dados enviados para o backend com sucesso 🚀');
       })
       .catch(function (error) {
-        console.log('banana');
+        console.log(error);
       });
   }
   function levelUp() {
