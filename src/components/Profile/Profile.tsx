@@ -4,11 +4,9 @@ import { useSession } from 'next-auth/client';
 import styles from './Profile.module.css';
 import api from '../../../services/api';
 import Modal from 'react-modal';
-import getServerSideProps from '../../pages/pomodoro';
 
 export function Profile() {
   const [session] = useSession();
-
   const email = session?.user.email;
   const image = session?.user.image;
   const name = session?.user.name;
@@ -20,7 +18,6 @@ export function Profile() {
   const [isNewUser, setIsNewUser] = useState(false);
 
   function sendUserData(email, image, name) {
-    // getServerSideProps(email);
     api
       .post(url, {
         email: email,

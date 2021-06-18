@@ -2,6 +2,7 @@ import React, { createContext, useState, ReactNode, useEffect } from 'react';
 import { LevelUpModal } from '../components/LevelUpModal/LevelUpModal';
 import challenges from '../../challenges.json';
 import api from '../../services/api';
+import { useSession } from 'next-auth/client';
 
 export const ChallengesContext = createContext({} as ChallengesContextData);
 
@@ -37,6 +38,9 @@ export function ChallengesProvider({
   ...rest
 }: ChallengesProviderProps) {
   const [level, setLevel] = useState(rest.level ?? 1);
+  const [session] = useSession();
+  const email = session?.user.email;
+
   const [currentExperience, setCurrentExperience] = useState(
     rest.currentExperience ?? 0
   );
@@ -54,7 +58,9 @@ export function ChallengesProvider({
   }, []);
 
   useEffect(() => {
-    send_data_to_api(challengesCompleted, level, currentExperience);
+    if (email) {
+      send_data_to_api(challengesCompleted, level, currentExperience);
+    }
   }, [challengesCompleted]);
 
   function send_data_to_api(challengesCompleted, level, currentExperience) {
@@ -63,7 +69,7 @@ export function ChallengesProvider({
         current_level: level,
         current_experience: currentExperience,
         tasks_completed: challengesCompleted,
-        email: 'jotalmeida007@hotmail.com',
+        email: email,
       })
       .then(function () {
         console.log('Dados enviados para o backend com sucesso 🚀');
