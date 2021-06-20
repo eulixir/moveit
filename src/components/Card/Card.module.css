@@ -77,4 +77,7 @@
 
     padding-left: 1px;
   }
+  .cardUserProfile img {
+    margin-left: 20px;
+  }
 }

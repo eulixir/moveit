@@ -13,7 +13,7 @@ export function Profile() {
 
   const { level } = useContext(ChallengesContext);
 
-  const url = 'http://localhost:4000/api/users';
+  const url = 'https://moveit.gigalixirapp.com/api/users';
 
   const [isNewUser, setIsNewUser] = useState(false);
 

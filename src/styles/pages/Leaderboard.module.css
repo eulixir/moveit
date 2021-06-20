@@ -53,6 +53,13 @@
   width: 0px;
   background: transparent;
 }
+
+@media (max-width: 1500px) {
+  .cardTitleContainer {
+    grid-template-columns: 12% 48% 22% 18%;
+  }
+}
+
 @media (max-width: 1200px) {
   .leaderboardContainer {
     flex-direction: column;
