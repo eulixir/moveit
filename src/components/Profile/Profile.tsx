@@ -25,7 +25,19 @@ export function Profile() {
         name: name,
       })
       .then(function (response) {
-        showUserModal();
+        if (response.status == 200) {
+          api
+            .put(url, {
+              email: email,
+              image: image,
+              name: name,
+            })
+            .then(function (response) {
+              console.log('Dados atualizados com sucesso ✅');
+            });
+        } else {
+          showUserModal();
+        }
       })
       .catch(function (error) {
         console.log(error);
