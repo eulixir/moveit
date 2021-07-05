@@ -11,9 +11,14 @@ export default function Leaderboard() {
   const [user, setUser] = useState([]);
   // const url = 'https://moveit.gigalixirapp.com/api/users/';
   useEffect(() => {
-    api.get('http://localhost:4000/api/users/leaderboard').then((response) => {
-      setUser(response.data.best_moviters);
-    });
+    api
+      .get('http://localhost:4000/api/users/leaderboard')
+      .then((response) => {
+        setUser(response.data.best_moviters);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }, []);
 
   return (
