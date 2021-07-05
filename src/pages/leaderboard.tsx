@@ -2,29 +2,18 @@ import styles from '../styles/pages/Leaderboard.module.css';
 import { useEffect, useState } from 'react';
 import { Navbar } from '../components/Navbar/Navbar';
 
+import Card from '../components/Card/Card';
+import api from '../../services/api';
 import Head from 'next/head';
 import React from 'react';
-import Card from '../components/Card/Card';
 
-export default function Home() {
-  const user_json = [
-    {
-      user: {
-        name: 'João Pedro',
-        profile_data: {
-          level: '12',
-          experience: '12223',
-          challenges_completed: '3',
-        },
-        position: '1',
-      },
-    },
-  ];
-
+export default function Leaderboard() {
   const [user, setUser] = useState([]);
-
+  // const url = 'https://moveit.gigalixirapp.com/api/users/';
   useEffect(() => {
-    setUser(user_json);
+    api.get('http://localhost:4000/api/users/leaderboard').then((response) => {
+      setUser(response.data.best_moviters);
+    });
   }, []);
 
   return (
@@ -46,7 +35,7 @@ export default function Home() {
           </div>
           <div className={styles.cardContainer}>
             {user.map((user) => {
-              return <Card key={user.name} user={user.user} />;
+              return <Card key={user.id} user={user} />;
             })}
           </div>
         </div>

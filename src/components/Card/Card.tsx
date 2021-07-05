@@ -14,15 +14,15 @@ export default function Card(props) {
           <strong>{props.user.name}</strong>
           <p>
             <img src="icons/level.svg" alt="level" />
-            Level {props.user.profile_data.level}
+            Level {props.user.profile_data.current_level}
           </p>
         </div>
       </div>
       <div className={styles.cardChallenges}>
-        {props.user.profile_data.challenges_completed}
+        {props.user.profile_data.tasks_completed}
       </div>
       <div className={styles.cardExperience}>
-        {props.user.profile_data.experience}
+        {props.user.profile_data.current_experience}
       </div>
     </div>
   );
