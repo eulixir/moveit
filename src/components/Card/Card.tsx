@@ -6,10 +6,7 @@ export default function Card(props) {
     <div className={styles.cardBox}>
       <div className={styles.cardPosition}>{props.user.position}</div>
       <div className={styles.cardUserProfile}>
-        <img
-          src="https://avatars.githubusercontent.com/u/56173070?v=4"
-          alt="Profile picture"
-        />
+        <img src={props.user.image} alt="Profile picture" />
         <div>
           <strong>{props.user.name}</strong>
           <p>
