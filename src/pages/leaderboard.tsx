@@ -9,10 +9,9 @@ import React from 'react';
 
 export default function Leaderboard() {
   const [user, setUser] = useState([]);
-  // const url = 'https://moveit.gigalixirapp.com/api/users/';
   useEffect(() => {
     api
-      .get('http://localhost:4000/api/users/leaderboard')
+      .get('https://moveit.gigalixirapp.com/api/users/leaderboard')
       .then((response) => {
         setUser(response.data.best_moviters);
       })
