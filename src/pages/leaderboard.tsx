@@ -38,8 +38,8 @@ export default function Leaderboard() {
             <div>EXPERIÊNCIA</div>
           </div>
           <div className={styles.cardContainer}>
-            {user.map((user) => {
-              return <Card key={user.id} user={user} />;
+            {user.map((user, index) => {
+              return <Card key={user.id} user={user} index={index + 1} />;
             })}
           </div>
         </div>

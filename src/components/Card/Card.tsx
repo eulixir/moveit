@@ -4,7 +4,7 @@ import styles from './Card.module.css';
 export default function Card(props) {
   return (
     <div className={styles.cardBox}>
-      <div className={styles.cardPosition}>{props.user.position}</div>
+      <div className={styles.cardPosition}>{props.index}</div>
       <div className={styles.cardUserProfile}>
         <img src={props.user.image} alt="Profile picture" />
         <div>
