@@ -32,7 +32,7 @@ export default function Leaderboard() {
           <div className={styles.cardTitleContainer}>
             <div>POSIÇÃO</div>
             <div>
-              <span>USUÁRIO</span>
+              <span>MOVITER</span>
             </div>
             <div>DESAFIOS</div>
             <div>EXPERIÊNCIA</div>

@@ -11,6 +11,7 @@ export default function Card(props) {
           <strong>{props.user.name}</strong>
           <p>
             <img src="icons/level.svg" alt="level" />
+            {'   '}
             Level {props.user.profile_data.current_level}
           </p>
         </div>
