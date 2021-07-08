@@ -119,7 +119,7 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 - Add Backend (Working in Elixir, you can contribue in the project in <a href="https://github.com/joaopealves/exmoveit">exmoveit</a>)✅
 - Add login to save user data in database ✅
 - Deploy ✅
-- Add counter in local storage (if the user trade page) ✅
+- Add counter provider ✅
 - Add theme Switcher
 - Add Spotify API
 - Customize the time
