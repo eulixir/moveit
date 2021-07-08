@@ -3,7 +3,7 @@ import { ExperienceBar } from '../components/ExperienceBar/ExperienceBar';
 import { ChallengeBox } from '../components/ChallengeBox/ChallengeBox';
 import PrivacyButton from '../components/PrivacyButton/PrivacyButton';
 import { ChallengesProvider } from '../contexts/ChallengesContext';
-import { CountdownProvider } from '../contexts/CountdownContext';
+
 import TermsButton from '../components/TermsButton/TermsButton';
 import { Countdown } from '../components/Countdown/Countdown';
 import { Profile } from '../components/Profile/Profile';
@@ -36,22 +36,20 @@ export default function Home(props: HomeProps) {
               <title>Início | move.it</title>
             </Head>
             <ExperienceBar />
-            <CountdownProvider>
-              <section className={styles.section}>
-                <div>
-                  <Profile />
-                  <CompletedChallenges />
-                  <Countdown />
+            <section className={styles.section}>
+              <div>
+                <Profile />
+                <CompletedChallenges />
+                <Countdown />
+              </div>
+              <div>
+                <ChallengeBox />
+                <div className={styles.JuriContainer}>
+                  <PrivacyButton />
+                  <TermsButton />
                 </div>
-                <div>
-                  <ChallengeBox />
-                  <div className={styles.JuriContainer}>
-                    <PrivacyButton />
-                    <TermsButton />
-                  </div>
-                </div>
-              </section>
-            </CountdownProvider>
+              </div>
+            </section>
           </div>
         </div>
       </ChallengesProvider>
