@@ -1,7 +1,7 @@
 .cardBox {
   width: 100%;
 
-  background: white;
+  background: var(--white);
 
   border-radius: 5px 5px 5px 5px;
 
@@ -50,7 +50,7 @@
   .cardBox {
     width: 95%;
 
-    background: white;
+    background: var(--white);
 
     border-radius: 5px 5px 5px 5px;
 

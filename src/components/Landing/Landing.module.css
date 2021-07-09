@@ -59,7 +59,7 @@
 .loginContainer button:first-child {
   border-radius: 10px 0px 0px 10px;
   background-color: transparent;
-  color: white;
+  color: var(--white);
 }
 
 .GithubIconOpacity {
@@ -91,7 +91,7 @@
 
 .loginContainer button:last-child {
   background: transparent;
-  color: white;
+  color: var(--white);
   border-radius: 0px 5px 5px 0px;
 }
 .loginContainer button:first-child:hover {

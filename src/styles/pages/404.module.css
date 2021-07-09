@@ -23,7 +23,7 @@
   outline: none;
 
   background: var(--blue);
-  color: white;
+  color: var(--white);
 
   transition: 0.3s;
 }

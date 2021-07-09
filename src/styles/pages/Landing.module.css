@@ -10,7 +10,7 @@
 }
 
 .landingContainer section {
-  color: white;
+  color: var(--white);
   flex: 1;
   display: grid;
   grid-template-columns: 1fr 1fr;
