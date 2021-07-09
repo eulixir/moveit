@@ -5,9 +5,7 @@ import '../styles/global.scss';
 function MyApp({ Component, pageProps }) {
   return (
     <Provider session={pageProps.session}>
-      <CountdownProvider>
-        <Component {...pageProps} />
-      </CountdownProvider>
+      <Component {...pageProps} />
     </Provider>
   );
 }

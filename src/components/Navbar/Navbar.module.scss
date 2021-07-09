@@ -1,27 +1,23 @@
 .navbarContainer {
   background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
   filter: drop-shadow(0px 0px 60px rgba(0, 0, 0, 0.05));
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-rows: 10% 80% 10%;
+  flex-direction: column;
   align-items: center;
   left: 0;
   height: 100vh;
   top: 0;
   width: 112px;
 }
-.navbarContainer img {
-  position: absolute;
-  top: 32px;
-}
-.menuIcons {
+
+.navbarLogoContainer {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 150px;
-  width: 100%;
+  align-items: center;
+  justify-content: center;
 }
 
-.houseDiv {
+.iconDiv {
   height: 56px;
 
   display: flex;
@@ -30,18 +26,18 @@
 
   border: none;
   border-left: 4px solid rgba(116, 96, 96, 0);
-  /* transition: 0.4s; */
 
   color: #999999;
 
   cursor: pointer;
   position: relative;
 }
-.houseDiv:hover {
+
+.iconDiv:hover {
   color: var(--blue);
 }
 
-.houseDiv:hover::before {
+.iconDiv:hover::before {
   content: '';
   position: absolute;
   left: -4px;
@@ -53,40 +49,10 @@
   border-bottom-right-radius: 8px;
 }
 
-.medalDiv {
-  height: 56px;
-
+.logout {
   display: flex;
   align-items: center;
   justify-content: center;
-
-  color: #919191;
-
-  border: none;
-  border-left: 4px solid rgba(116, 96, 96, 0);
-
-  cursor: pointer;
-
-  position: relative;
-}
-
-.medalDiv:hover {
-  color: var(--blue);
-}
-
-.medalDiv:hover::before {
-  content: '';
-  position: absolute;
-  left: -4px;
-  top: 0;
-  bottom: 0;
-  width: 5px;
-  background-color: var(--blue);
-  border-top-right-radius: 8px;
-  border-bottom-right-radius: 8px;
-}
-.navbarContainer .logout {
-  position: absolute;
   bottom: 32px;
   color: var(--blue);
   cursor: pointer;
@@ -98,7 +64,7 @@
 
 @media (max-width: 1200px) {
   .navbarContainer {
-    background: rgb(255, 255, 255);
+    background: var(--white);
     background: linear-gradient(
       169deg,
       rgba(255, 255, 255, 1) 35%,
@@ -107,28 +73,31 @@
     filter: none;
     height: 70px;
     width: 100%;
-    position: relative;
-    display: flex;
+    display: grid;
+    grid-template-columns: 10% 70% 10%;
+    grid-template-rows: none;
     justify-content: center;
     align-items: center;
   }
   .menuIcons {
+    margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    align-self: center;
     flex-direction: row;
     height: 70px;
-    width: 20%;
+    width: 50%;
   }
-  .navbarContainer .logout {
-    right: 15px;
-    bottom: 15px;
-  }
+  // .logout {
+  //   // right: 15px;
+  //   // bottom: 15px;
+  // }
 
-  .navbarContainer img {
-    left: 15px;
-    top: 15px;
-  }
+  // .navbarLogoContainer {
+  //   // left: 15px;
+  //   // top: 15px;
+  // }
   .medalDiv:hover::before {
     left: 0;
     top: -10px;

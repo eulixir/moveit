@@ -4,6 +4,7 @@ import { CgLogOut } from 'react-icons/cg';
 import styles from './Navbar.module.scss';
 import { BsHouse } from 'react-icons/bs';
 import { useRouter } from 'next/router';
+import { FaSpotify } from 'react-icons/fa';
 
 export function Navbar() {
   const router = useRouter();
@@ -25,13 +26,18 @@ export function Navbar() {
   };
   return (
     <div className={styles.navbarContainer}>
-      <img src="/icons/Logo-blue.svg" alt="" />
+      <div className={styles.navbarLogoContainer}>
+        <img src="/icons/Logo-blue.svg" alt="" />
+      </div>
       <div className={styles.menuIcons}>
-        <div onClick={handleClickHome} className={styles.houseDiv}>
+        <div onClick={handleClickHome} className={styles.iconDiv}>
           <BsHouse size="40" />
         </div>
-        <div onClick={handleClickLeader} className={styles.medalDiv}>
+        <div onClick={handleClickLeader} className={styles.iconDiv}>
           <RiMedalFill size="40" />
+        </div>
+        <div className={styles.iconDiv}>
+          <FaSpotify size="40" />
         </div>
       </div>
       <a className={styles.logout} onClick={handleClickLogout}>
