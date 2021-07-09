@@ -8,7 +8,7 @@
   left: 0;
   height: 100vh;
   top: 0;
-  width: 112px;
+  width: 100px;
 }
 
 .navbarLogoContainer {
@@ -89,25 +89,7 @@
     height: 70px;
     width: 50%;
   }
-  // .logout {
-  //   // right: 15px;
-  //   // bottom: 15px;
-  // }
-
-  // .navbarLogoContainer {
-  //   // left: 15px;
-  //   // top: 15px;
-  // }
-  .medalDiv:hover::before {
-    left: 0;
-    top: -10px;
-    bottom: 0;
-    height: 8px;
-    width: 100%;
-    background-color: var(--blue);
-    border-radius: 0px 0px 10px 10px;
-  }
-  .houseDiv:hover::before {
+  .iconDiv:hover::before {
     left: 0;
     top: -10px;
     bottom: 0;

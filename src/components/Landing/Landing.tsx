@@ -1,9 +1,9 @@
-import { ImGoogle, ImGithub } from 'react-icons/im';
 import { signIn, useSession } from 'next-auth/client';
-import { SwapSpinner } from 'react-spinners-kit';
+import { ImGoogle, ImGithub } from 'react-icons/im';
+import PulseLoader from 'react-spinners/PulseLoader';
 import styles from './Landing.module.scss';
-import { DiReact } from 'react-icons/di';
 import { useRouter } from 'next/router';
+import { DiReact } from 'react-icons/di';
 
 export function Landing() {
   const [session, loading] = useSession();
@@ -59,7 +59,7 @@ export function Landing() {
               src="/icons/login.svg"
               onLoad={() => router.push('/pomodoro')}
             />
-            <SwapSpinner size={200} color={'white'} />
+            <PulseLoader color={'white'} size={25} speedMultiplier={0.5} />
           </div>
         </div>
       )}
