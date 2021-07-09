@@ -6,7 +6,7 @@ import Head from 'next/head';
 
 import React from 'react';
 
-import styles from '../styles/pages/Privacy.module.css';
+import styles from '../styles/pages/Privacy.module.scss';
 
 import { BiArrowBack } from 'react-icons/bi';
 

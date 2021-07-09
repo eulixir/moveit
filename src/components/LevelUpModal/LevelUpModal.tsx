@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { ChallengesContext } from '../../contexts/ChallengesContext';
-import styles from './LevelUp.module.css';
+import styles from './LevelUp.module.scss';
 import { FaTwitter } from 'react-icons/fa';
 
 export function LevelUpModal() {

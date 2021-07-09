@@ -1,11 +1,9 @@
-import styles from './Navbar.module.css';
-import { BsHouse } from 'react-icons/bs';
+import { signOut, useSession } from 'next-auth/client';
 import { RiMedalFill } from 'react-icons/ri';
 import { CgLogOut } from 'react-icons/cg';
-
+import styles from './Navbar.module.scss';
+import { BsHouse } from 'react-icons/bs';
 import { useRouter } from 'next/router';
-
-import { signOut, useSession } from 'next-auth/client';
 
 export function Navbar() {
   const router = useRouter();

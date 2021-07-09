@@ -1,13 +1,9 @@
-import styles from './Landing.module.css';
-import { useRouter } from 'next/router';
-
 import { ImGoogle, ImGithub } from 'react-icons/im';
-
-import { DiReact } from 'react-icons/di';
-
 import { signIn, useSession } from 'next-auth/client';
-
 import { SwapSpinner } from 'react-spinners-kit';
+import styles from './Landing.module.scss';
+import { DiReact } from 'react-icons/di';
+import { useRouter } from 'next/router';
 
 export function Landing() {
   const [session, loading] = useSession();

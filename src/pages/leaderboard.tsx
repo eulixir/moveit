@@ -1,4 +1,4 @@
-import styles from '../styles/pages/Leaderboard.module.css';
+import styles from '../styles/pages/Leaderboard.module.scss';
 import { useEffect, useState } from 'react';
 import { Navbar } from '../components/Navbar/Navbar';
 

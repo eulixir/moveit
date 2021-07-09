@@ -1,11 +1,10 @@
 import { useState, useEffect, useContext } from 'react';
 
-import { ChallengesContext } from '../../contexts/ChallengesContext';
 import { CountdownContext } from '../../contexts/CountdownContext';
 import { IoMdArrowDropright } from 'react-icons/io';
 import { AiOutlineClose } from 'react-icons/ai';
 
-import styles from './Countdown.module.css';
+import styles from './Countdown.module.scss';
 
 export function Countdown() {
   const {

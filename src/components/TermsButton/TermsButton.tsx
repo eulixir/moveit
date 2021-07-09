@@ -1,4 +1,4 @@
-import styles from './Terms.module.css';
+import styles from './Terms.module.scss';
 
 import { useRouter } from 'next/router';
 

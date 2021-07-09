@@ -8,7 +8,7 @@ import TermsButton from '../components/TermsButton/TermsButton';
 import { Countdown } from '../components/Countdown/Countdown';
 import { Profile } from '../components/Profile/Profile';
 import { Navbar } from '../components/Navbar/Navbar';
-import styles from '../styles/pages/Home.module.css';
+import styles from '../styles/pages/Home.module.scss';
 import { GetServerSideProps } from 'next';
 import Head from 'next/head';
 import React from 'react';

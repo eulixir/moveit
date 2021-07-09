@@ -1,7 +1,7 @@
 import { ChallengesContext } from '../../contexts/ChallengesContext';
 import { useContext, useEffect, useState } from 'react';
 import { useSession } from 'next-auth/client';
-import styles from './Profile.module.css';
+import styles from './Profile.module.scss';
 import api from '../../../services/api';
 import Modal from 'react-modal';
 

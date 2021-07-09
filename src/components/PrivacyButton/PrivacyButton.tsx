@@ -1,4 +1,4 @@
-import styles from './Privacy.module.css';
+import styles from './Privacy.module.scss';
 
 import { useRouter } from 'next/router';
 
