@@ -5,7 +5,48 @@
   box-sizing: border-box;
 }
 
-body {
+body[data-theme='light'] {
+  --white: #fff;
+  --background: #f2f3f5;
+  --gray-line: #dcdde0;
+  --text: #666666;
+  --text-highlight: #b3b9ff;
+  --title: #2e384d;
+  --red: #e83f5b;
+  --green: #4cd62b;
+  --blue: #5965e0;
+  --blue-background: #5965e0;
+  --blue-dark: #4953b8;
+  --blue-twitter: #2aa9e0;
+  --button-red: #fff5f5;
+  --button-green: #f7fff5;
+  --challenge-button-failed: #e83f5b;
+  --challenge-button-completed: #3fb023;
+  --level-up-background: rgba(242, 243, 245, 0.8);
+  --level-up-border: #dcdde0;
+  --dark-grey: rgb(134, 134, 134);
+  background: var(--background);
+  color: var(--text);
+}
+body[data-theme='dark'] {
+  --white: #5151bd15;
+  --background: #010714;
+  --gray-line: #dcdde0;
+  --text: #cacaca;
+  --text-highlight: #b3b9ff;
+  --title: #fdfdfd;
+  --red: #e83f5b;
+  --green: #4cd62b;
+  --blue: #3b78e9;
+  --blue-dark: #133066;
+  --blue-background: #010714;
+  --button-red: #7e0000ab;
+  --button-green: #38ff0648;
+  --challenge-button-failed: #ffffff;
+  --challenge-button-completed: #ffffff;
+  --level-up-background: rgba(0, 0, 0, 0.699);
+  --level-up-border: #020a1b;
+  --blue-twitter: #2aa9e0;
   background: var(--background);
   color: var(--text);
 }

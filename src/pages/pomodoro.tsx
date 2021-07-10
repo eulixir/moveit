@@ -12,7 +12,7 @@ import styles from '../styles/pages/Home.module.scss';
 import { GetServerSideProps } from 'next';
 import Switch from 'react-switch';
 import Head from 'next/head';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import api from 'axios';
 import { getSession } from 'next-auth/client';
 
@@ -23,7 +23,12 @@ interface HomeProps {
 }
 
 export default function Home(props: HomeProps) {
-  const [banana, setBanana] = React.useState(0);
+  const [activeTheme, setActiveTheme] = useState('light');
+  const inactiveTheme = activeTheme === 'light' ? 'dark' : 'light';
+
+  useEffect(() => {
+    document.body.dataset.theme = activeTheme;
+  }, [activeTheme]);
 
   return (
     <>
@@ -35,7 +40,8 @@ export default function Home(props: HomeProps) {
         <div className={styles.homeContainer}>
           <Navbar />
           <div className={styles.switch}>
-            <Switch
+            {/* <Switch
+            
               checkedIcon={false}
               uncheckedIcon={false}
               height={10}
@@ -45,7 +51,7 @@ export default function Home(props: HomeProps) {
               onHandleColor="#fff"
               offColor="#969696"
               onColor="#c9c9c9"
-            ></Switch>
+            ></Switch> */}
           </div>
           <div className={styles.container}>
             <Head>
@@ -58,6 +64,10 @@ export default function Home(props: HomeProps) {
                   <Profile />
                   <CompletedChallenges />
                   <Countdown />
+
+                  <span onClick={() => setActiveTheme(inactiveTheme)}>
+                    Banana
+                  </span>
                 </div>
                 <div>
                   <ChallengeBox />
