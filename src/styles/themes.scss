@@ -1,4 +1,4 @@
-#white-theme {
+:root[data-theme-color='light'] {
   --white: #fff;
   --background: #f2f3f5;
   --gray-line: #dcdde0;
@@ -20,7 +20,7 @@
   --dark-grey: rgb(134, 134, 134);
 }
 
-#dark-theme {
+:root[data-theme-color='dark'] {
   --white: #5151bd15;
   --background: #010714;
   --gray-line: #dcdde0;

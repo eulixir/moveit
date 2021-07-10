@@ -1,29 +1,8 @@
+@import './themes.scss';
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-:root {
-  --white: #5151bd15;
-  --background: #010714;
-  --gray-line: #dcdde0;
-  --text: #cacaca;
-  --text-highlight: #b3b9ff;
-  --title: #fdfdfd;
-  --red: #e83f5b;
-  --green: #4cd62b;
-  --blue: #3b78e9;
-  --blue-dark: #133066;
-  --blue-background: #010714;
-  --button-red: #7e0000ab;
-  --button-green: #38ff0648;
-  --challenge-button-failed: #ffffff;
-  --challenge-button-completed: #ffffff;
-  --level-up-background: rgba(0, 0, 0, 0.699);
-  --level-up-border: #020a1b;
-  --blue-twitter: #2aa9e0;
-  --dark-grey: rgb(223, 223, 223);
 }
 
 body {
