@@ -1,5 +1,5 @@
 .overlay {
-  background: rgba(242, 243, 245, 0.8);
+  background: var(--level-up-background);
   position: fixed;
   top: 0;
   bottom: 0;
@@ -12,7 +12,7 @@
 }
 
 .container {
-  background: var(--white);
+  background: var(--background);
   width: 100%;
   max-width: 400px;
   height: 400px;
@@ -38,7 +38,7 @@
 
 .container p {
   font-size: 1.25rem;
-  color: var(--tetx);
+  color: var(--text);
   margin-top: 0.25rem;
 }
 .closeButton {
@@ -56,7 +56,7 @@
   width: 100%;
   left: 0;
   height: 80px;
-  background: #f5fcff;
+  background: var(--level-up-border);
 }
 
 .container footer button {
@@ -64,7 +64,7 @@
   height: 100%;
   background-color: transparent;
   border: none;
-  border-top: 1px solid #dcdde0;
+  border-top: 1px solid var(--level-up-border);
   color: var(--blue-twitter);
   outline: none;
   display: flex;
@@ -77,7 +77,7 @@
 }
 
 .container footer button:hover {
-  color: var(--white);
+  color: var(--text);
   background: var(--blue-twitter);
 }
 .container footer button span {

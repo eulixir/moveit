@@ -16,7 +16,7 @@
 
   display: flex;
   justify-content: center;
-  background-color: rgb(255, 255, 255);
+  background-color: var(--background);
   overflow: auto;
 
   border-radius: 15px;
@@ -31,6 +31,7 @@
   margin-top: 5%;
   margin-bottom: 20px;
   text-align: justify;
+  color: grey;
 }
 
 .TextContent h2 {
@@ -45,7 +46,7 @@
 .TextContent h3 {
   margin-top: 5%;
   margin-bottom: 20px;
-  color: rgb(59, 59, 59);
+  color: var(--dark-grey);
 }
 .TextContent li {
   margin-top: 2%;
@@ -76,7 +77,7 @@
 
 .backIcon {
   cursor: pointer;
-  background: var(--white);
+  background: var(--background);
   width: 50%;
   height: 80px;
   display: flex;

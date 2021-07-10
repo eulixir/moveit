@@ -3,7 +3,6 @@ import { ExperienceBar } from '../components/ExperienceBar/ExperienceBar';
 import { ChallengeBox } from '../components/ChallengeBox/ChallengeBox';
 import PrivacyButton from '../components/PrivacyButton/PrivacyButton';
 import { ChallengesProvider } from '../contexts/ChallengesContext';
-
 import { CountdownProvider } from '../contexts/CountdownContext';
 import TermsButton from '../components/TermsButton/TermsButton';
 import { Countdown } from '../components/Countdown/Countdown';
@@ -11,6 +10,7 @@ import { Profile } from '../components/Profile/Profile';
 import { Navbar } from '../components/Navbar/Navbar';
 import styles from '../styles/pages/Home.module.scss';
 import { GetServerSideProps } from 'next';
+import Switch from 'react-switch';
 import Head from 'next/head';
 import React from 'react';
 import api from 'axios';
@@ -23,6 +23,8 @@ interface HomeProps {
 }
 
 export default function Home(props: HomeProps) {
+  const [banana, setBanana] = React.useState(0);
+
   return (
     <>
       <ChallengesProvider
@@ -32,6 +34,19 @@ export default function Home(props: HomeProps) {
       >
         <div className={styles.homeContainer}>
           <Navbar />
+          <div className={styles.switch}>
+            <Switch
+              checkedIcon={false}
+              uncheckedIcon={false}
+              height={10}
+              width={40}
+              handleDiameter={20}
+              offHandleColor="#e0e0e0"
+              onHandleColor="#fff"
+              offColor="#969696"
+              onColor="#c9c9c9"
+            ></Switch>
+          </div>
           <div className={styles.container}>
             <Head>
               <title>Início | move.it</title>

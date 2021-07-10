@@ -26,6 +26,12 @@
   position: relative;
 }
 
+.switch {
+  right: 20px;
+  top: 40px;
+  position: absolute;
+}
+
 @media (max-width: 1200px) {
   .homeContainer {
     flex-direction: column;

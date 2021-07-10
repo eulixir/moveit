@@ -1,5 +1,5 @@
 .Container {
-  background-color: var(--blue);
+  background-color: var(--blue-background);
   height: 100vh;
   width: 100vw;
   display: flex;
@@ -7,7 +7,7 @@
   align-items: center;
   justify-content: center;
 
-  color: var(--white);
+  color: white;
 }
 
 .contentLoginContainer {
@@ -59,7 +59,7 @@
 .loginContainer button:first-child {
   border-radius: 10px 0px 0px 10px;
   background-color: transparent;
-  color: var(--white);
+  color: white;
 }
 
 .GithubIconOpacity {
@@ -91,7 +91,7 @@
 
 .loginContainer button:last-child {
   background: transparent;
-  color: var(--white);
+  color: white;
   border-radius: 0px 5px 5px 0px;
 }
 .loginContainer button:first-child:hover {
@@ -156,7 +156,6 @@
     width: 100vw;
     display: grid;
     grid-template-columns: 50% 50%;
-    color: var(--white);
   }
 
   .logoContainer {
