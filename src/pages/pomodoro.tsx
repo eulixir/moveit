@@ -10,11 +10,11 @@ import { Profile } from '../components/Profile/Profile';
 import { Navbar } from '../components/Navbar/Navbar';
 import styles from '../styles/pages/Home.module.scss';
 import { GetServerSideProps } from 'next';
-import Switch from 'react-switch';
 import Head from 'next/head';
 import React, { useState, useEffect } from 'react';
 import api from 'axios';
 import { getSession } from 'next-auth/client';
+import Toggle from '../components/Toggle/Toggle';
 
 interface HomeProps {
   level: number;
@@ -25,6 +25,12 @@ interface HomeProps {
 export default function Home(props: HomeProps) {
   const [activeTheme, setActiveTheme] = useState('light');
   const inactiveTheme = activeTheme === 'light' ? 'dark' : 'light';
+
+  const [toggled, setToggled] = useState(false);
+  const handleClick = () => {
+    setToggled((s) => !s);
+    setActiveTheme(inactiveTheme);
+  };
 
   useEffect(() => {
     document.body.dataset.theme = activeTheme;
@@ -39,19 +45,10 @@ export default function Home(props: HomeProps) {
       >
         <div className={styles.homeContainer}>
           <Navbar />
+
           <div className={styles.switch}>
-            {/* <Switch
-            
-              checkedIcon={false}
-              uncheckedIcon={false}
-              height={10}
-              width={40}
-              handleDiameter={20}
-              offHandleColor="#e0e0e0"
-              onHandleColor="#fff"
-              offColor="#969696"
-              onColor="#c9c9c9"
-            ></Switch> */}
+            {' '}
+            <Toggle toggled={toggled} onClick={handleClick} />
           </div>
           <div className={styles.container}>
             <Head>
@@ -64,10 +61,6 @@ export default function Home(props: HomeProps) {
                   <Profile />
                   <CompletedChallenges />
                   <Countdown />
-
-                  <span onClick={() => setActiveTheme(inactiveTheme)}>
-                    Banana
-                  </span>
                 </div>
                 <div>
                   <ChallengeBox />
