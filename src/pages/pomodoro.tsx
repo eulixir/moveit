@@ -7,33 +7,38 @@ import { CountdownProvider } from '../contexts/CountdownContext';
 import TermsButton from '../components/TermsButton/TermsButton';
 import { Countdown } from '../components/Countdown/Countdown';
 import { Profile } from '../components/Profile/Profile';
-import { Navbar } from '../components/Navbar/Navbar';
 import styles from '../styles/pages/Home.module.scss';
-import { GetServerSideProps } from 'next';
-import Head from 'next/head';
+import { Navbar } from '../components/Navbar/Navbar';
 import React, { useState, useEffect } from 'react';
-import api from 'axios';
-import { getSession } from 'next-auth/client';
 import Toggle from '../components/Toggle/Toggle';
-
+import { getSession } from 'next-auth/client';
+import { GetServerSideProps } from 'next';
+import Cookies from 'js-cookie';
+import Head from 'next/head';
+import api from 'axios';
 interface HomeProps {
   level: number;
   currentExperience: number;
   challengesCompleted: number;
+  theme: string;
 }
 
 export default function Home(props: HomeProps) {
-  const [activeTheme, setActiveTheme] = useState('light');
+  const [activeTheme, setActiveTheme] = useState(props.theme);
   const inactiveTheme = activeTheme === 'light' ? 'dark' : 'light';
 
   const [toggled, setToggled] = useState(false);
   const handleClick = () => {
-    setToggled((s) => !s);
+    setToggled(activeTheme === 'light');
     setActiveTheme(inactiveTheme);
   };
 
   useEffect(() => {
     document.body.dataset.theme = activeTheme;
+  }, [activeTheme]);
+
+  useEffect(() => {
+    Cookies.set('theme', activeTheme);
   }, [activeTheme]);
 
   return (
@@ -89,23 +94,27 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
         response.data.profile_data.profile_data.current_experience;
       const tasks_completed: number =
         response.data.profile_data.profile_data.tasks_completed;
+      const { theme } = ctx.req.cookies;
+
       return {
         props: {
           level: Number(level),
           currentExperience: Number(currentExperience),
           challengesCompleted: Number(tasks_completed),
+          theme: String(theme),
         },
       };
     })
     .catch(function (error) {
+      const { theme } = ctx.req.cookies;
       return {
         props: {
           level: Number(1),
           currentExperience: Number(0),
           challengesCompleted: Number(0),
+          theme: String(theme),
         },
       };
     });
-
   return result;
 };
