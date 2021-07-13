@@ -9,38 +9,18 @@ import { Countdown } from '../components/Countdown/Countdown';
 import { Profile } from '../components/Profile/Profile';
 import styles from '../styles/pages/Home.module.scss';
 import { Navbar } from '../components/Navbar/Navbar';
-import React, { useState, useEffect } from 'react';
-import Toggle from '../components/Toggle/Toggle';
 import { getSession } from 'next-auth/client';
 import { GetServerSideProps } from 'next';
-import Cookies from 'js-cookie';
 import Head from 'next/head';
+import React from 'react';
 import api from 'axios';
 interface HomeProps {
   level: number;
   currentExperience: number;
   challengesCompleted: number;
-  theme: string;
 }
 
 export default function Home(props: HomeProps) {
-  const [activeTheme, setActiveTheme] = useState(props.theme);
-  const inactiveTheme = activeTheme === 'light' ? 'dark' : 'light';
-
-  const [toggled, setToggled] = useState(false);
-  const handleClick = () => {
-    setToggled(activeTheme === 'light');
-    setActiveTheme(inactiveTheme);
-  };
-
-  useEffect(() => {
-    document.body.dataset.theme = activeTheme;
-  }, [activeTheme]);
-
-  useEffect(() => {
-    Cookies.set('theme', activeTheme);
-  }, [activeTheme]);
-
   return (
     <>
       <ChallengesProvider
@@ -51,13 +31,9 @@ export default function Home(props: HomeProps) {
         <div className={styles.homeContainer}>
           <Navbar />
 
-          <div className={styles.switch}>
-            {' '}
-            <Toggle toggled={toggled} onClick={handleClick} />
-          </div>
           <div className={styles.container}>
             <Head>
-              <title>Início | move.it</title>
+              <title>Pomodoro | move.it</title>
             </Head>
             <ExperienceBar />
             <CountdownProvider>
@@ -88,31 +64,26 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const result = await api
     .get('https://moveit.gigalixirapp.com/api/profile_data/' + email)
     .then(function (response) {
-      const level: number =
-        response.data.profile_data.profile_data.current_level;
+      const level: number = response.data.profile_data.current_level;
       const currentExperience: number =
-        response.data.profile_data.profile_data.current_experience;
+        response.data.profile_data.current_experience;
       const tasks_completed: number =
-        response.data.profile_data.profile_data.tasks_completed;
-      const { theme } = ctx.req.cookies;
+        response.data.profile_data.tasks_completed;
 
       return {
         props: {
           level: Number(level),
           currentExperience: Number(currentExperience),
           challengesCompleted: Number(tasks_completed),
-          theme: String(theme),
         },
       };
     })
     .catch(function (error) {
-      const { theme } = ctx.req.cookies;
       return {
         props: {
           level: Number(1),
           currentExperience: Number(0),
           challengesCompleted: Number(0),
-          theme: String(theme),
         },
       };
     });

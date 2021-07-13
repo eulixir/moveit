@@ -1,4 +1,3 @@
-import { CountdownProvider } from '../contexts/CountdownContext';
 import { Provider } from 'next-auth/client';
 import '../styles/global.scss';
 

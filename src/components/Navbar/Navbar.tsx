@@ -1,10 +1,11 @@
-import { signOut, useSession } from 'next-auth/client';
+import { FaSpotify, FaQuestion, FaWrench } from 'react-icons/fa';
+import { signOut } from 'next-auth/client';
 import { RiMedalFill } from 'react-icons/ri';
 import { CgLogOut } from 'react-icons/cg';
 import styles from './Navbar.module.scss';
 import { BsHouse } from 'react-icons/bs';
 import { useRouter } from 'next/router';
-import { FaSpotify, FaQuestion } from 'react-icons/fa';
+import { BsFillPersonFill } from 'react-icons/bs';
 
 export function Navbar() {
   const router = useRouter();
@@ -24,6 +25,12 @@ export function Navbar() {
     e.preventDefault();
     router.push('/leaderboard');
   };
+
+  const handleClickProfile = (e) => {
+    e.preventDefault();
+    router.push('/profile');
+  };
+
   return (
     <div className={styles.navbarContainer}>
       <div className={styles.navbarLogoContainer}>
@@ -33,6 +40,9 @@ export function Navbar() {
         <div onClick={handleClickHome} className={styles.iconDiv}>
           <BsHouse size="30" />
         </div>
+        <div onClick={handleClickProfile} className={styles.iconDiv}>
+          <BsFillPersonFill size="30" />
+        </div>
         <div className={styles.iconDiv}>
           <FaSpotify size="25" />
         </div>
@@ -40,7 +50,7 @@ export function Navbar() {
           <RiMedalFill size="30" />
         </div>
         <div className={styles.iconDiv}>
-          <FaQuestion size="30" />
+          <FaWrench size="30" />
         </div>
       </div>
       <a className={styles.logout} onClick={handleClickLogout}>
