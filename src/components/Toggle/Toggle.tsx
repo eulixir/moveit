@@ -9,10 +9,8 @@ export default function Toggle({ toggled, onClick }) {
     >
       <div className={styles.notch}>
         <div className={styles.crater} />
-        <div className={styles.crater} />
       </div>
       <div>
-        <div className={`${styles.shape} ${styles.sm}`} />
         <div className={`${styles.shape} ${styles.sm}`} />
         <div className={`${styles.shape} ${styles.md}`} />
         <div className={`${styles.shape} ${styles.lg}`} />
