@@ -54,18 +54,15 @@ export default function Profile(props: ProfileProps) {
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const session = await getSession({ ctx });
   const email = session?.user.email;
-  console.log('namama1');
   const result = await api
-    .get('https://moveit.gigalixirapp.com/api/profile_data/' + email)
+    .get(process.env.API_URL + '/api/users/get_by_email/' + email)
     .then(function (response) {
-      const level: number = response.data.profile_data.current_level;
+      const level: number = response.data.user.profile_data.current_level;
       const currentExperience: number =
-        response.data.profile_data.current_experience;
+        response.data.user.profile_data.current_experience;
       const tasks_completed: number =
-        response.data.profile_data.tasks_completed;
+        response.data.user.profile_data.tasks_completed;
       const { theme } = ctx.req.cookies;
-
-      console.log(response.data);
 
       return {
         props: {
@@ -77,6 +74,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
       };
     })
     .catch(function (error) {
+      console.log(error);
       const { theme } = ctx.req.cookies;
       return {
         props: {

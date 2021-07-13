@@ -65,7 +65,7 @@ export function ChallengesProvider({
 
   function send_data_to_api(challengesCompleted, level, currentExperience) {
     api
-      .put('https://moveit.gigalixirapp.com/api/profile_data/', {
+      .put(process.env.API_URL + '/api/profile_data/', {
         current_level: level,
         current_experience: currentExperience,
         tasks_completed: challengesCompleted,

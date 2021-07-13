@@ -11,7 +11,7 @@ export default function Leaderboard() {
   const [user, setUser] = useState([]);
   useEffect(() => {
     api
-      .get('https://moveit.gigalixirapp.com/api/users/leaderboard')
+      .get(process.env.API_URL + '/api/users/leaderboard')
       .then((response) => {
         setUser(response.data.best_moviters);
       })
