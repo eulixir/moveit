@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './Toggle.module.scss';
 
 export default function Toggle({ toggled, onClick }) {
+  console.log(toggled);
   return (
     <div
       onClick={onClick}

@@ -16,10 +16,13 @@ interface ProfileProps {
 }
 
 export default function Profile(props: ProfileProps) {
-  const [activeTheme, setActiveTheme] = useState(props.theme);
+  const currentTheme = props.theme;
+
+  const [activeTheme, setActiveTheme] = useState(currentTheme);
   const inactiveTheme = activeTheme === 'light' ? 'dark' : 'light';
 
   const [toggled, setToggled] = useState(false);
+
   const handleClick = () => {
     setToggled(activeTheme === 'light');
     setActiveTheme(inactiveTheme);
@@ -43,7 +46,7 @@ export default function Profile(props: ProfileProps) {
             <title>Profile | move.it</title>
           </Head>
           <div>
-            <Toggle toggled={toggled} onClick={handleClick} />
+            <Toggle toggled={toggled === true} onClick={handleClick} />
           </div>
         </div>
       </div>
