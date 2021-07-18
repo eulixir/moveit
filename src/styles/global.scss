@@ -1,4 +1,3 @@
-@import './themes.scss';
 * {
   margin: 0;
   padding: 0;
@@ -25,6 +24,8 @@ body[data-theme='light'] {
   --level-up-background: rgba(242, 243, 245, 0.8);
   --level-up-border: #dcdde0;
   --dark-grey: rgb(134, 134, 134);
+  --navbar-color1: rgba(255, 255, 255, 1);
+  --navbar-color2: rgba(242, 242, 245, 1);
   background: var(--background);
   color: var(--text);
 }
@@ -47,6 +48,8 @@ body[data-theme='dark'] {
   --level-up-background: rgba(0, 0, 0, 0.699);
   --level-up-border: #020a1b;
   --blue-twitter: #2aa9e0;
+  --navbar-color1: #5151bd15;
+  --navbar-color2: #010714;
   background: var(--background);
   color: var(--text);
 }

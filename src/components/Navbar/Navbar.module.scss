@@ -71,8 +71,8 @@
     background: var(--white);
     background: linear-gradient(
       169deg,
-      rgba(255, 255, 255, 1) 35%,
-      rgba(242, 242, 245, 1) 100%
+      var(--navbar-color1) 35%,
+      var(--navbar-color2) 100%
     );
     filter: none;
     height: 70px;
