@@ -36,18 +36,17 @@ export default function Profile(props: ProfileProps) {
     Cookies.set('theme', activeTheme);
   }, [activeTheme]);
 
+  console.log(toggled);
+
   return (
     <>
-      <div className={styles.homeContainer}>
+      <Head>
+        <title>Profile | move.it</title>
+      </Head>
+      <div className={styles.profileContainer}>
         <Navbar />
-
-        <div className={styles.container}>
-          <Head>
-            <title>Profile | move.it</title>
-          </Head>
-          <div>
-            <Toggle toggled={toggled === true} onClick={handleClick} />
-          </div>
+        <div className={styles.profileContent}>
+          <Toggle toggled={toggled} onClick={handleClick} />
         </div>
       </div>
     </>
