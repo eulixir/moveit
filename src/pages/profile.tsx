@@ -13,6 +13,8 @@ interface ProfileProps {
   currentExperience: number;
   challengesCompleted: number;
   theme: string;
+  image: string;
+  name: string;
 }
 
 export default function Profile(props: ProfileProps) {
@@ -43,8 +45,6 @@ export default function Profile(props: ProfileProps) {
     Cookies.set('theme', activeTheme);
   }, [activeTheme]);
 
-  console.log(toggled);
-
   return (
     <>
       <Head>
@@ -53,7 +53,26 @@ export default function Profile(props: ProfileProps) {
       <div className={styles.profileContainer}>
         <Navbar />
         <div className={styles.profileContent}>
-          <Toggle toggled={toggled} onClick={handleClick} />
+          <div className={styles.toggleContainer}>
+            <Toggle toggled={toggled} onClick={handleClick} />
+          </div>
+          <div className={styles.profileContentContainer}>
+            <div className={styles.userProfileContainer}>
+              <img src={props.image} alt="user image" />
+              <span>{props.name}</span>
+            </div>
+            <div className={styles.userDataContainer}>
+              <div>
+                <span>Level:</span> {props.level}
+              </div>
+              <div>
+                <span>Experiência atual:</span> {props.currentExperience}
+              </div>
+              <div>
+                <span>Desafios completos:</span> {props.challengesCompleted}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </>
@@ -66,6 +85,8 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const result = await api
     .get(process.env.API_URL + '/api/users/get_by_email/' + email)
     .then(function (response) {
+      const image: string = response.data.user.image;
+      const name: string = response.data.user.name;
       const level: number = response.data.user.profile_data.current_level;
       const currentExperience: number =
         response.data.user.profile_data.current_experience;
@@ -79,6 +100,8 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
           currentExperience: Number(currentExperience),
           challengesCompleted: Number(tasks_completed),
           theme: String(theme),
+          name: String(name),
+          image: String(image),
         },
       };
     })

@@ -41,7 +41,23 @@
   color: var(--blue);
 }
 
-.iconDiv:hover::before {
+.iconDivActive {
+  height: 56px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-left: 4px solid rgba(116, 96, 96, 0);
+
+  cursor: pointer;
+  position: relative;
+
+  color: var(--blue);
+}
+
+.iconDivActive::before {
   content: '';
   position: absolute;
   left: -4px;
@@ -52,7 +68,6 @@
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
 }
-
 .logout {
   display: flex;
   align-items: center;
@@ -93,7 +108,7 @@
     height: 70px;
     width: 50%;
   }
-  .iconDiv:hover::before {
+  .iconDivActive::before {
     left: 0;
     top: -10px;
     bottom: 0;

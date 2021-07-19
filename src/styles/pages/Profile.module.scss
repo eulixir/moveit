@@ -2,16 +2,76 @@
   width: 100vw;
   height: 100vh;
   display: flex;
-  display: flex;
 }
 .profileContent {
-  width: 100%;
+  width: 95%;
   height: 100vh;
+
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 
+.toggleContainer {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+.profileContentContainer {
+  width: 80%;
+  height: 80%;
+  display: grid;
+  grid-template-rows: 50% 50%;
+  grid-template-columns: 100%;
+}
+
+.userProfileContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+.userDataContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.userDataContainer div {
+  background: var(--blue);
+  color: white;
+  font: 700 2.4rem Inter;
+  border-radius: 4px;
+  width: 20%;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+}
+
+.userDataContainer div span {
+  font: 700 1rem Inter;
+  color: var(--text-highlight);
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.userProfileContainer span {
+  font: 700 1.4rem Inter;
+  color: var(--blue);
+}
+
+.userProfileContainer img {
+  border-radius: 50%;
+  border: solid 3px var(--blue);
+}
 @media (max-width: 1200px) {
   .profileContainer {
     flex-direction: column;
@@ -20,5 +80,18 @@
   .profileContent {
     width: 100%;
     height: 95vh;
+  }
+}
+@media (max-width: 700px) {
+  .profileContentContainer {
+    width: 100%;
+  }
+  .userDataContainer div {
+    width: 30%;
+  }
+  .userDataContainer div span {
+    font: 700 0.8rem Inter;
+    top: 5px;
+    left: 5px;
   }
 }
