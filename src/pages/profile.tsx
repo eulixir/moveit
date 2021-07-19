@@ -21,7 +21,14 @@ export default function Profile(props: ProfileProps) {
   const [activeTheme, setActiveTheme] = useState(currentTheme);
   const inactiveTheme = activeTheme === 'light' ? 'dark' : 'light';
 
-  const [toggled, setToggled] = useState(false);
+  const getCurrentTheme = () => {
+    if (currentTheme == 'dark') {
+      return true;
+    } else {
+      return false;
+    }
+  };
+  const [toggled, setToggled] = useState(getCurrentTheme());
 
   const handleClick = () => {
     setToggled(activeTheme === 'light');
