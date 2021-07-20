@@ -11,9 +11,11 @@ import styles from '../styles/pages/Home.module.scss';
 import { Navbar } from '../components/Navbar/Navbar';
 import { getSession } from 'next-auth/client';
 import { GetServerSideProps } from 'next';
+import React, { useEffect } from 'react';
+import Cookies from 'js-cookie';
 import Head from 'next/head';
-import React from 'react';
 import api from 'axios';
+
 interface HomeProps {
   level: number;
   currentExperience: number;
@@ -21,6 +23,9 @@ interface HomeProps {
 }
 
 export default function Home(props: HomeProps) {
+  useEffect(() => {
+    document.body.dataset.theme = Cookies.get('theme');
+  }, []);
   return (
     <>
       <ChallengesProvider

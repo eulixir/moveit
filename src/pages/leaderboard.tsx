@@ -1,18 +1,23 @@
 import styles from '../styles/pages/Leaderboard.module.scss';
-import { useEffect, useState } from 'react';
 import { Navbar } from '../components/Navbar/Navbar';
-
+import { useEffect, useState } from 'react';
 import Card from '../components/Card/Card';
 import api from '../../services/api';
+import Cookies from 'js-cookie';
 import Head from 'next/head';
 import React from 'react';
 
 export default function Leaderboard() {
+  useEffect(() => {
+    document.body.dataset.theme = Cookies.get('theme');
+  }, []);
+
   const [user, setUser] = useState([]);
   useEffect(() => {
     api
-      .get(process.env.API_URL + '/api/users/leaderboard')
+      .get('http://moveit.gigalixirapp.com/api/users/leaderboard')
       .then((response) => {
+        console.log("banana");
         setUser(response.data.best_moviters);
       })
       .catch((error) => {

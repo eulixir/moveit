@@ -71,6 +71,8 @@
 .userProfileContainer img {
   border-radius: 50%;
   border: solid 3px var(--blue);
+  width: 200px;
+  height: 200px;
 }
 @media (max-width: 1200px) {
   .profileContainer {
