@@ -1,13 +1,13 @@
+import { getSession, useSession } from 'next-auth/client';
 import styles from '../styles/pages/Profile.module.scss';
 import { Navbar } from '../components/Navbar/Navbar';
-import { getSession } from 'next-auth/client';
 import React, { useEffect, useState } from 'react';
 import Toggle from '../components/Toggle/Toggle';
 import { GetServerSideProps } from 'next';
+import { useRouter } from 'next/router';
 import Cookies from 'js-cookie';
 import Head from 'next/head';
 import api from 'axios';
-
 interface ProfileProps {
   level: number;
   currentExperience: number;
@@ -19,10 +19,10 @@ interface ProfileProps {
 
 export default function Profile(props: ProfileProps) {
   const currentTheme = props.theme;
-  
+
   const [activeTheme, setActiveTheme] = useState(currentTheme);
   const inactiveTheme = activeTheme === 'light' ? 'dark' : 'light';
-  
+
   const getCurrentTheme = () => {
     if (currentTheme == 'dark') {
       return true;
@@ -31,50 +31,59 @@ export default function Profile(props: ProfileProps) {
     }
   };
   const [toggled, setToggled] = useState(getCurrentTheme());
-  
+
   const handleClick = () => {
     setToggled(activeTheme === 'light');
     setActiveTheme(inactiveTheme);
   };
-  
+
   useEffect(() => {
     document.body.dataset.theme = activeTheme;
   }, [activeTheme]);
-  
+
   useEffect(() => {
     Cookies.set('theme', activeTheme);
   }, [activeTheme]);
-  
+
   return (
     <>
       <Head>
         <title>Profile | move.it</title>
       </Head>
-      <div className={styles.profileContainer}>
-        <Navbar />
-        <div className={styles.profileContent}>
-          <div className={styles.toggleContainer}>
-            <Toggle toggled={toggled} onClick={handleClick} />
-          </div>
-          <div className={styles.profileContentContainer}>
-            <div className={styles.userProfileContainer}>
-              <img src={props.image} alt="user image" />
-              <span>{props.name}</span>
+      {useSession()[0] != null ? (
+        <div className={styles.profileContainer}>
+          <Navbar />
+          <div className={styles.profileContent}>
+            <div className={styles.toggleContainer}>
+              <Toggle toggled={toggled} onClick={handleClick} />
             </div>
-            <div className={styles.userDataContainer}>
-              <div>
-                <span>Level:</span> {props.level}
+            <div className={styles.profileContentContainer}>
+              <div className={styles.userProfileContainer}>
+                <img src={props.image} alt="user image" />
+                <span>{props.name}</span>
               </div>
-              <div>
-                <span>Experiência atual:</span> {props.currentExperience}
-              </div>
-              <div>
-                <span>Desafios completos:</span> {props.challengesCompleted}
+              <div className={styles.userDataContainer}>
+                <div>
+                  <span>Level:</span> {props.level}
+                </div>
+                <div>
+                  <span>Experiência atual:</span> {props.currentExperience}
+                </div>
+                <div>
+                  <span>Desafios completos:</span> {props.challengesCompleted}
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      ) : (
+        <div>
+          <button onClick={() => useRouter().push('/')}>
+            Parece que não está logado, volte para a tela incial e tenta logar
+            💜
+          </button>
+        </div>
+      )}
     </>
   );
 }
@@ -83,27 +92,27 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const session = await getSession({ ctx });
   const email = session?.user.email;
   const result = await api
-  .get(process.env.API_URL + '/api/users/get_by_email/' + email)
-  .then(function (response) {
-    const name: string = response.data.user.name;
-    const level: number = response.data.user.profile_data.current_level;
-    const image: string = response.data.user.image;
-    
-    const currentExperience: number =
-    response.data.user.profile_data.current_experience;
-    const tasks_completed: number =
-    response.data.user.profile_data.tasks_completed;
-    
-    const { theme } = ctx.req.cookies;
-    
-    return {
-      props: {
-        level: Number(level),
-        currentExperience: Number(currentExperience),
-        challengesCompleted: Number(tasks_completed),
-        theme: String(theme),
-        name: String(name),
-        image: String(image),
+    .get(process.env.API_URL + '/api/users/get_by_email/' + email)
+    .then(function (response) {
+      const name: string = response.data.user.name;
+      const level: number = response.data.user.profile_data.current_level;
+      const image: string = response.data.user.image;
+
+      const currentExperience: number =
+        response.data.user.profile_data.current_experience;
+      const tasks_completed: number =
+        response.data.user.profile_data.tasks_completed;
+
+      const { theme } = ctx.req.cookies;
+
+      return {
+        props: {
+          level: Number(level),
+          currentExperience: Number(currentExperience),
+          challengesCompleted: Number(tasks_completed),
+          theme: String(theme),
+          name: String(name),
+          image: String(image),
         },
       };
     })
