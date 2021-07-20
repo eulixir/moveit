@@ -89,9 +89,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const session = await getSession({ ctx });
   const email = session?.user.email;
   const result = await api
-    .get(
-      'https://moveit-joaopealves.vercel.app/api/users/get_by_email/' + email
-    )
+    .get('https://moveit.gigalixirapp.com/api/users/get_by_email/' + email)
     .then(function (response) {
       const name: string = response.data.user.name;
       const level: number = response.data.user.profile_data.current_level;
