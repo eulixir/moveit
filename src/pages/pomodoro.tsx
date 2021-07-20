@@ -73,8 +73,10 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const email = session?.user.email;
 
   const result = await api
-    .get(process.env.API_URL + '/api/profile_data/' + email)
+    .get('http://moveit.gigalixirapp.com/api/profile_data/' + email)
+
     .then(function (response) {
+      console.log('bana23na');
       const level: number = response.data.profile_data.current_level;
       const currentExperience: number =
         response.data.profile_data.current_experience;
