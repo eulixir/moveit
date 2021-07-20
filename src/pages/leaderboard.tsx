@@ -7,6 +7,7 @@ import api from '../../services/api';
 import Head from 'next/head';
 import React from 'react';
 import { useRouter } from 'next/router';
+import Session from '../components/Session/Session';
 
 export default function Leaderboard() {
   const [user, setUser] = useState([]);
@@ -47,12 +48,7 @@ export default function Leaderboard() {
           </div>
         </div>
       ) : (
-        <div>
-          <button onClick={() => useRouter().push('/')}>
-            Parece que não está logado, volte para a tela incial e tenta logar
-            💜
-          </button>
-        </div>
+        <Session />
       )}
     </>
   );

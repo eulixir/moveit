@@ -6,7 +6,7 @@ import { DiReact } from 'react-icons/di';
 import { useRouter } from 'next/router';
 
 export function Landing() {
-  const [session, loading] = useSession();
+  const [session] = useSession();
   const router = useRouter();
   return (
     <>

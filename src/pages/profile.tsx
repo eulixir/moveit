@@ -8,6 +8,7 @@ import { useRouter } from 'next/router';
 import Cookies from 'js-cookie';
 import Head from 'next/head';
 import api from 'axios';
+import Session from '../components/Session/Session';
 interface ProfileProps {
   level: number;
   currentExperience: number;
@@ -18,6 +19,8 @@ interface ProfileProps {
 }
 
 export default function Profile(props: ProfileProps) {
+  const [session] = useSession();
+  const router = useRouter();
   const currentTheme = props.theme;
 
   const [activeTheme, setActiveTheme] = useState(currentTheme);
@@ -50,7 +53,7 @@ export default function Profile(props: ProfileProps) {
       <Head>
         <title>Profile | move.it</title>
       </Head>
-      {useSession()[0] != null ? (
+      {session && (
         <div className={styles.profileContainer}>
           <Navbar />
           <div className={styles.profileContent}>
@@ -76,14 +79,8 @@ export default function Profile(props: ProfileProps) {
             </div>
           </div>
         </div>
-      ) : (
-        <div>
-          <button onClick={() => useRouter().push('/')}>
-            Parece que não está logado, volte para a tela incial e tenta logar
-            💜
-          </button>
-        </div>
       )}
+      {!session && <Session />}
     </>
   );
 }

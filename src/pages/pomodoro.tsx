@@ -15,6 +15,7 @@ import React from 'react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 import api from 'axios';
+import Session from '../components/Session/Session';
 interface HomeProps {
   level: number;
   currentExperience: number;
@@ -62,12 +63,7 @@ export default function Home(props: HomeProps) {
           </div>
         </ChallengesProvider>
       ) : (
-        <div>
-          <button onClick={() => router.push('/')}>
-            Parece que não está logado, volte para a tela incial e tenta logar
-            💜
-          </button>
-        </div>
+        <Session />
       )}
     </>
   );
