@@ -13,7 +13,7 @@ export function Profile() {
 
   const { level } = useContext(ChallengesContext);
 
-  const url = process.env.API_URL + 'api/users';
+  const url = 'https://moveit.gigalixirapp.com/api/users';
 
   const [isNewUser, setIsNewUser] = useState(false);
 
