@@ -3,19 +3,12 @@ import { Navbar } from '../components/Navbar/Navbar';
 import { useSession } from 'next-auth/client';
 import { useEffect, useState } from 'react';
 import Card from '../components/Card/Card';
-import { useRouter } from 'next/router';
 import api from '../../services/api';
-import Cookies from 'js-cookie';
 import Head from 'next/head';
 import React from 'react';
+import { useRouter } from 'next/router';
 
 export default function Leaderboard() {
-  const router = useRouter();
-
-  useEffect(() => {
-    document.body.dataset.theme = Cookies.get('theme');
-  }, []);
-
   const [user, setUser] = useState([]);
   useEffect(() => {
     api
@@ -55,7 +48,7 @@ export default function Leaderboard() {
         </div>
       ) : (
         <div>
-          <button onClick={() => router.push('/')}>
+          <button onClick={() => useRouter().push('/')}>
             Parece que não está logado, volte para a tela incial e tenta logar
             💜
           </button>

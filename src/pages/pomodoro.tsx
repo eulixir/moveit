@@ -11,13 +11,10 @@ import { Profile } from '../components/Profile/Profile';
 import styles from '../styles/pages/Home.module.scss';
 import { Navbar } from '../components/Navbar/Navbar';
 import { GetServerSideProps } from 'next';
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useRouter } from 'next/router';
-import Cookies from 'js-cookie';
 import Head from 'next/head';
 import api from 'axios';
-import { PulseLoader } from 'react-spinners';
-
 interface HomeProps {
   level: number;
   currentExperience: number;
@@ -29,9 +26,6 @@ export default function Home(props: HomeProps) {
   const session = useSession();
   const router = useRouter();
 
-  useEffect(() => {
-    document.body.dataset.theme = Cookies.get('theme');
-  }, []);
   return (
     <>
       {session[0] != null ? (

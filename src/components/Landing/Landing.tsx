@@ -4,16 +4,8 @@ import PulseLoader from 'react-spinners/PulseLoader';
 import styles from './Landing.module.scss';
 import { DiReact } from 'react-icons/di';
 import { useRouter } from 'next/router';
-import { useEffect } from 'react';
-import Cookies from 'js-cookie';
 
 export function Landing() {
-  Cookies.get('theme') === undefined ? Cookies.set('theme', 'light') : '';
-
-  useEffect(() => {
-    document.body.dataset.theme = Cookies.get('theme');
-  }, []);
-
   const [session, loading] = useSession();
   const router = useRouter();
   return (

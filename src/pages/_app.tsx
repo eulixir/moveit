@@ -1,8 +1,14 @@
 import { Provider } from 'next-auth/client';
+import Cookies from 'js-cookie';
 import '../styles/global.scss';
-import React from 'react';
+import React, { useEffect } from 'react';
 
-function MyApp({ Component, pageProps }) {
+function Moveit({ Component, pageProps }) {
+  Cookies.get('theme') === undefined ? Cookies.set('theme', 'light') : '';
+  useEffect(() => {
+    document.body.dataset.theme = Cookies.get('theme');
+  }, []);
+
   return (
     <Provider session={pageProps.session}>
       <Component {...pageProps} />
@@ -10,4 +16,4 @@ function MyApp({ Component, pageProps }) {
   );
 }
 
-export default MyApp;
+export default Moveit;
