@@ -130,14 +130,14 @@ export function ChallengesProvider({
       value={{
         level,
         levelUp,
-        currentExperience,
-        challengesCompleted,
-        startNewChallenge,
-        activeChallenge,
         resetChallenge,
-        experienceToNextLevel,
+        activeChallenge,
+        currentExperience,
+        startNewChallenge,
         completeChallenge,
         closeLevelUpModal,
+        challengesCompleted,
+        experienceToNextLevel,
       }}
     >
       {children}
