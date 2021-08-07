@@ -1,6 +1,6 @@
 # Moveit
 
-<p align="center"><img src="https://raw.githubusercontent.com/guilhermecapitao/nlw04-moveit-web/206d2e078394ca207037c0a86a976a0c8a5e6257/.github/moveit.svg"/></p>
+<p align="center"><img src="github/documents/landing.png"></p>
 <h4 align="center">NextLevelWeek 4.0 🚀</h4>
 <h4 align="center">Application made during a NLW, made with love by @Rocketseat 💜</h4>
 
