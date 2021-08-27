@@ -23,7 +23,7 @@
 <br>
 
 <p align="center" id="project">
-  Moveit is a project developed during the next level week, promoted by Rocketseat, the aim of the project is to put Pomodoro's theory into practice. 
+  Moveit is a project developed during the next level week, promoted by Rocketseat, the aim of the project is lika a Pomodoro's theory into practice. 
   </p>
 <p align="center" id="project">
   The Pomodoro concept is that the person who is going to study or perform a task takes exactly 25 minutes. 
