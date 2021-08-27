@@ -1,6 +1,5 @@
-import { useState, useEffect, useContext } from 'react';
-
 import { CountdownContext } from '../../contexts/CountdownContext';
+import { useState, useEffect, useContext } from 'react';
 import { IoMdArrowDropright } from 'react-icons/io';
 import { AiOutlineClose } from 'react-icons/ai';
 

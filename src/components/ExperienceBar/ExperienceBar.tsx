@@ -1,6 +1,6 @@
-import { useContext } from 'react';
 import { ChallengesContext } from '../../contexts/ChallengesContext';
 import styles from './ExperienceBar.module.scss';
+import { useContext } from 'react';
 
 export function ExperienceBar() {
   const { currentExperience, experienceToNextLevel } =
