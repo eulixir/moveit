@@ -1,5 +1,5 @@
-import React from 'react';
 import styles from './Toggle.module.scss';
+import React from 'react';
 
 export default function Toggle({ toggled, onClick }) {
   return (

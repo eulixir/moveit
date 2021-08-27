@@ -10,12 +10,12 @@ import { getSession, useSession } from 'next-auth/client';
 import { Profile } from '../components/Profile/Profile';
 import styles from '../styles/pages/Home.module.scss';
 import { Navbar } from '../components/Navbar/Navbar';
+import Session from '../components/Session/Session';
 import { GetServerSideProps } from 'next';
 import React from 'react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 import api from 'axios';
-import Session from '../components/Session/Session';
 interface HomeProps {
   level: number;
   currentExperience: number;

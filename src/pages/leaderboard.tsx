@@ -1,5 +1,6 @@
 import styles from '../styles/pages/Leaderboard.module.scss';
 import { Navbar } from '../components/Navbar/Navbar';
+import Session from '../components/Session/Session';
 import { useSession } from 'next-auth/client';
 import { useEffect, useState } from 'react';
 import Card from '../components/Card/Card';
@@ -7,7 +8,6 @@ import api from '../../services/api';
 import Head from 'next/head';
 import React from 'react';
 import { useRouter } from 'next/router';
-import Session from '../components/Session/Session';
 
 export default function Leaderboard() {
   const [user, setUser] = useState([]);
