@@ -1,8 +1,8 @@
 import React, { createContext, useState, ReactNode, useEffect } from 'react';
 import { LevelUpModal } from '../components/LevelUpModal/LevelUpModal';
 import challenges from '../../challenges.json';
-import api from '../../services/api';
 import { useSession } from 'next-auth/client';
+import api from '../../services/api';
 
 export const ChallengesContext = createContext({} as ChallengesContextData);
 

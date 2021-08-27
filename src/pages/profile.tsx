@@ -1,6 +1,7 @@
 import { getSession, useSession } from 'next-auth/client';
 import styles from '../styles/pages/Profile.module.scss';
 import { Navbar } from '../components/Navbar/Navbar';
+import Session from '../components/Session/Session';
 import React, { useEffect, useState } from 'react';
 import Toggle from '../components/Toggle/Toggle';
 import { GetServerSideProps } from 'next';
@@ -8,7 +9,7 @@ import { useRouter } from 'next/router';
 import Cookies from 'js-cookie';
 import Head from 'next/head';
 import api from 'axios';
-import Session from '../components/Session/Session';
+
 interface ProfileProps {
   level: number;
   currentExperience: number;

@@ -1,14 +1,10 @@
+import styles from '../styles/pages/Privacy.module.scss';
 import { Navbar } from '../components/Navbar/Navbar';
-
+import { BiArrowBack } from 'react-icons/bi';
 import { useRouter } from 'next/router';
-
 import Head from 'next/head';
-
 import React from 'react';
 
-import styles from '../styles/pages/Privacy.module.scss';
-
-import { BiArrowBack } from 'react-icons/bi';
 
 export default function Privacy() {
   const router = useRouter();
