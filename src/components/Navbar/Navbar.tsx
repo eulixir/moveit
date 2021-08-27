@@ -1,11 +1,11 @@
 import { FaSpotify, FaQuestion, FaWrench } from 'react-icons/fa';
-import { signOut } from 'next-auth/client';
+import { BsFillPersonFill } from 'react-icons/bs';
 import { RiMedalFill } from 'react-icons/ri';
+import { signOut } from 'next-auth/client';
 import { CgLogOut } from 'react-icons/cg';
 import styles from './Navbar.module.scss';
 import { BsHouse } from 'react-icons/bs';
 import { useRouter } from 'next/router';
-import { BsFillPersonFill } from 'react-icons/bs';
 
 export function Navbar() {
   const router = useRouter();
