@@ -1,6 +1,6 @@
 import { signIn, useSession } from 'next-auth/client';
-import { ImGoogle, ImGithub } from 'react-icons/im';
 import PulseLoader from 'react-spinners/PulseLoader';
+import { ImGoogle, ImGithub } from 'react-icons/im';
 import styles from './Landing.module.scss';
 import { DiReact } from 'react-icons/di';
 import { useRouter } from 'next/router';
